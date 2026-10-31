@@ -1,12 +1,12 @@
 
 {
-    "id": "/rovixa-pos/KasirPenjualan/",
+    "id": "/",
     "name": "Rovixa Kasir Penjualan",
     "short_name": "Kasir Penjualan",
     "description": "Aplikasi kasir penjualan Rovixa POS",
     "lang": "id-ID",
-    "start_url": "/rovixa-pos/KasirPenjualan/",
-    "scope": "/rovixa-pos/KasirPenjualan/",
+    "start_url": "/",
+    "scope": "/",
     "display": "standalone",
     "orientation": "any",
     "background_color": "#f8fbfa",

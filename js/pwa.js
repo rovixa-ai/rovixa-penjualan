@@ -1,4 +1,3 @@
-
 /* ======================================
    ROVIXA KASIR PENJUALAN PWA
    REGISTRATION
@@ -17,9 +16,9 @@
         window.addEventListener("load", function () {
 
             navigator.serviceWorker.register(
-                "./service-worker.js",
+                "/service-worker.js",
                 {
-                    scope: "./"
+                    scope: "/"
                 }
             ).catch(function (error) {
 

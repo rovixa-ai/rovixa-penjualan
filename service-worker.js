@@ -14,7 +14,7 @@ const CACHE_PREFIX =
     "rovixa-sales-pwa";
 
 const CACHE_VERSION =
-    "v1";
+    "v2";
 
 const STATIC_CACHE =
     `${CACHE_PREFIX}-static-${CACHE_VERSION}`;
@@ -31,7 +31,9 @@ const APP_SHELL = [
     "./",
     "./index.html",
     "./manifest.json",
-    "./css/style.css"
+    "./css/style.css",
+    "./icons/penjualan-icon-192.svg",
+    "./icons/penjualan-icon-512.svg"
 ];
 
 

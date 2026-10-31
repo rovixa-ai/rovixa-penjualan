@@ -1,0 +1,85 @@
+/* ======================================
+   TREEHOUSE POS
+   REPORT HELPER
+   DESKTOP CSS
+====================================== */
+
+@media (min-width: 769px) {
+
+    /* ======================================
+       LOADING / ERROR / EMPTY
+    ====================================== */
+
+    .report-empty {
+        padding: 28px 20px;
+
+        color: #64748b;
+
+        font-size: 14px;
+        font-weight: 500;
+
+        text-align: center;
+        vertical-align: middle;
+
+        line-height: 1.7;
+
+        background: #ffffff;
+    }
+
+    .report-empty small {
+        display: block;
+
+        margin-top: 8px;
+
+        color: #dc2626;
+
+        font-size: 12px;
+        font-weight: 400;
+
+        line-height: 1.6;
+
+        overflow-wrap: anywhere;
+    }
+
+
+    /* ======================================
+       REPORT TABLE BODY
+    ====================================== */
+
+    #reportTableBody {
+        width: 100%;
+    }
+
+    #reportTableBody tr {
+        transition: background 0.2s ease;
+    }
+
+    #reportTableBody .report-empty {
+        height: 100px;
+    }
+
+
+    /* ======================================
+       TEXT DISPLAY
+    ====================================== */
+
+    .report-empty br {
+        display: block;
+
+        content: "";
+
+        margin-bottom: 4px;
+    }
+
+
+    /* ======================================
+       GENERAL TEXT
+    ====================================== */
+
+    .report-empty,
+    .report-empty small {
+        overflow-wrap: break-word;
+        word-break: normal;
+    }
+
+}

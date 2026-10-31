@@ -1,0 +1,259 @@
+/* ======================================
+   TREEHOUSE POS
+   GLOBAL LOADING
+   FILE: css/loading.css
+====================================== */
+
+.treehouse-loading-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 2147483647;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background: rgba(15, 23, 42, 0.32);
+
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition:
+        opacity 0.2s ease,
+        visibility 0.2s ease;
+}
+
+.treehouse-loading-overlay.is-visible {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+/* ======================================
+   LOADING CARD
+====================================== */
+
+.treehouse-loading-card {
+    width: 100%;
+    max-width: 300px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 30px 24px;
+
+    background: linear-gradient(
+        145deg,
+        #ffffff 0%,
+        #f8fbfa 100%
+    );
+
+    border: 1px solid #d6e2dd;
+    border-radius: 20px;
+
+    box-shadow:
+        0 20px 60px rgba(15, 23, 42, 0.16),
+        0 4px 12px rgba(15, 23, 42, 0.06);
+
+    text-align: center;
+
+    transform: translateY(8px) scale(0.98);
+
+    transition: transform 0.2s ease;
+}
+
+.treehouse-loading-overlay.is-visible
+.treehouse-loading-card {
+    transform: translateY(0) scale(1);
+}
+
+/* ======================================
+   SPINNER
+====================================== */
+
+.treehouse-loading-indicator {
+    position: relative;
+
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 20px;
+}
+
+.treehouse-loading-ring {
+    position: absolute;
+    inset: 0;
+
+    border: 4px solid #d6f5e8;
+    border-top-color: #10b981;
+    border-right-color: #059669;
+
+    border-radius: 50%;
+
+    animation:
+        treehouse-loading-spin 0.85s linear infinite;
+}
+
+.treehouse-loading-center {
+    width: 13px;
+    height: 13px;
+
+    background: #10b981;
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 0 6px rgba(16, 185, 129, 0.12);
+}
+
+/* ======================================
+   TEXT
+====================================== */
+
+.treehouse-loading-title {
+    margin: 0;
+
+    color: #17221e;
+
+    font-family:
+        Inter,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.treehouse-loading-message {
+    margin: 7px 0 0;
+
+    color: #68766f;
+
+    font-family:
+        Inter,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.6;
+
+    overflow-wrap: anywhere;
+}
+
+/* ======================================
+   PROGRESS ANIMATION
+====================================== */
+
+.treehouse-loading-progress {
+    width: 100%;
+    height: 4px;
+
+    margin-top: 22px;
+
+    overflow: hidden;
+
+    background: #e4eee9;
+    border-radius: 999px;
+}
+
+.treehouse-loading-progress-bar {
+    width: 38%;
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        #10b981,
+        #34d399
+    );
+
+    border-radius: 999px;
+
+    animation:
+        treehouse-loading-progress 1.4s ease-in-out infinite;
+}
+
+/* ======================================
+   ANIMATION
+====================================== */
+
+@keyframes treehouse-loading-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes treehouse-loading-progress {
+    0% {
+        transform: translateX(-110%);
+    }
+
+    100% {
+        transform: translateX(370%);
+    }
+}
+
+/* ======================================
+   MOBILE
+====================================== */
+
+@media (max-width: 768px) {
+
+    .treehouse-loading-overlay {
+        padding: 16px;
+    }
+
+    .treehouse-loading-card {
+        max-width: 270px;
+        padding: 26px 22px;
+        border-radius: 18px;
+    }
+
+    .treehouse-loading-indicator {
+        width: 52px;
+        height: 52px;
+        margin-bottom: 18px;
+    }
+
+    .treehouse-loading-title {
+        font-size: 15px;
+    }
+
+    .treehouse-loading-message {
+        font-size: 12px;
+    }
+}
+
+/* ======================================
+   REDUCED MOTION
+====================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .treehouse-loading-ring,
+    .treehouse-loading-progress-bar {
+        animation-duration: 3s;
+    }
+
+    .treehouse-loading-overlay,
+    .treehouse-loading-card {
+        transition: none;
+    }
+}

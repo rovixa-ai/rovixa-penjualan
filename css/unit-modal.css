@@ -1,0 +1,403 @@
+/* ======================================
+   TREEHOUSE POS
+   UNIT MODAL
+   PREMIUM EMERALD DESIGN
+   PROPORTIONAL DESKTOP & MOBILE
+====================================== */
+
+/* ======================================
+   OVERLAY
+====================================== */
+
+.unit-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 2147483000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    background: rgba(15, 32, 25, 0.56);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.unit-modal-overlay.show {
+    display: flex;
+}
+
+/* ======================================
+   MODAL CONTAINER
+====================================== */
+
+.unit-modal {
+    width: 100%;
+    max-width: 480px;
+    max-height: min(700px, 90vh);
+    max-height: min(700px, 90dvh);
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-sizing: border-box;
+    border: 1px solid #d6e8df;
+    border-radius: 15px;
+    background: #ffffff;
+    box-shadow:
+        0 20px 55px rgba(6, 78, 59, 0.17),
+        0 6px 20px rgba(15, 23, 42, 0.10);
+    animation: unitModalEnter 0.22s ease-out;
+}
+
+/* ======================================
+   HEADER
+====================================== */
+
+.unit-modal-header {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 14px 16px;
+    border-top: 3px solid #10b981;
+    border-bottom: 1px solid #dcebe4;
+    box-sizing: border-box;
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(52, 211, 153, 0.10),
+            transparent 48%
+        ),
+        linear-gradient(135deg, #ffffff 0%, #f7fcf9 100%);
+}
+
+.unit-modal-title {
+    min-width: 0;
+    color: #17221e;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+    letter-spacing: -0.2px;
+}
+
+.unit-modal-subtitle {
+    margin-top: 3px;
+    color: #68766f;
+    font-size: 11px;
+    line-height: 1.45;
+    overflow-wrap: anywhere;
+}
+
+/* ======================================
+   CLOSE BUTTON
+====================================== */
+
+.unit-modal-close {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: 1px solid #d6e5de;
+    border-radius: 9px;
+    background: #f3f8f5;
+    color: #607168;
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+    transition:
+        background 0.18s ease,
+        color 0.18s ease,
+        border-color 0.18s ease,
+        box-shadow 0.18s ease,
+        transform 0.18s ease;
+}
+
+.unit-modal-close:hover {
+    border-color: #f2b8b8;
+    background: #fff1f1;
+    color: #dc2626;
+    box-shadow: 0 3px 10px rgba(220, 38, 38, 0.08);
+}
+
+.unit-modal-close:active {
+    transform: scale(0.96);
+}
+
+/* ======================================
+   UNIT LIST
+====================================== */
+
+.unit-list {
+    flex: 1 1 auto;
+    min-height: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    box-sizing: border-box;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    background:
+        radial-gradient(
+            circle at top left,
+            rgba(16, 185, 129, 0.035),
+            transparent 42%
+        ),
+        #fbfdfc;
+}
+
+/* ======================================
+   UNIT CARD
+====================================== */
+
+.unit-card {
+    position: relative;
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px 13px;
+    box-sizing: border-box;
+    border: 1px solid #dce8e2;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #ffffff 0%, #fbfefc 100%);
+    box-shadow:
+        0 2px 5px rgba(23, 34, 30, 0.025),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    cursor: pointer;
+    transition:
+        border-color 0.18s ease,
+        background 0.18s ease,
+        box-shadow 0.18s ease,
+        transform 0.18s ease;
+}
+
+.unit-card:hover {
+    border-color: #6ee7b7;
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(52, 211, 153, 0.08),
+            transparent 55%
+        ),
+        linear-gradient(135deg, #ffffff 0%, #f0fdf7 100%);
+    box-shadow:
+        0 4px 12px rgba(5, 150, 105, 0.08),
+        inset 0 0 0 1px rgba(16, 185, 129, 0.04);
+}
+
+.unit-card:active {
+    border-color: #34d399;
+    background: #ecfdf5;
+    transform: scale(0.99);
+}
+
+/* ======================================
+   UNIT NAME
+====================================== */
+
+.unit-name {
+    flex: 1 1 auto;
+    min-width: 0;
+    color: #17221e;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+}
+
+.unit-info {
+    margin-top: 3px;
+    color: #718078;
+    font-size: 11px;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+}
+
+/* ======================================
+   UNIT PRICE
+====================================== */
+
+.unit-price {
+    flex: 0 1 auto;
+    min-width: 0;
+    max-width: 50%;
+    color: #047857;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.4;
+    text-align: right;
+    overflow-wrap: anywhere;
+}
+
+/* ======================================
+   EMPTY STATE
+====================================== */
+
+.unit-list .empty-cart {
+    flex-shrink: 0;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 22px 12px;
+    border: 1px dashed #d3e5dc;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #ffffff, #f7fbf8);
+    color: #8a9991;
+    font-size: 12px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* ======================================
+   ANIMATION
+====================================== */
+
+@keyframes unitModalEnter {
+    from {
+        opacity: 0;
+        transform: translateY(8px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ======================================
+   MOBILE
+====================================== */
+
+@media (max-width: 768px) {
+
+    .unit-modal-overlay {
+        align-items: center;
+        padding: 12px;
+        padding-top: max(12px, env(safe-area-inset-top));
+        padding-bottom: max(12px, env(safe-area-inset-bottom));
+    }
+
+    .unit-modal {
+        width: 100%;
+        max-width: 480px;
+        max-height: 88vh;
+        max-height: 88dvh;
+        border-radius: 13px;
+    }
+
+    .unit-modal-header {
+        gap: 10px;
+        padding: 12px 13px;
+    }
+
+    .unit-modal-title {
+        font-size: 15px;
+    }
+
+    .unit-modal-subtitle {
+        font-size: 10px;
+    }
+
+    .unit-modal-close {
+        width: 30px;
+        height: 30px;
+        border-radius: 8px;
+        font-size: 21px;
+    }
+
+    .unit-list {
+        flex: 1 1 auto;
+        min-height: 0;
+        gap: 7px;
+        padding: 10px;
+    }
+
+    .unit-card {
+        gap: 9px;
+        padding: 11px 12px;
+        border-radius: 9px;
+    }
+
+    .unit-name {
+        font-size: 12px;
+    }
+
+    .unit-info {
+        font-size: 10px;
+    }
+
+    .unit-price {
+        font-size: 12px;
+    }
+}
+
+/* ======================================
+   SMALL MOBILE
+====================================== */
+
+@media (max-width: 380px) {
+
+    .unit-modal-overlay {
+        padding-right: 8px;
+        padding-left: 8px;
+    }
+
+    .unit-modal {
+        max-height: 86vh;
+        max-height: 86dvh;
+    }
+
+    .unit-modal-header {
+        padding: 11px 12px;
+    }
+
+    .unit-modal-title {
+        font-size: 14px;
+    }
+
+    .unit-list {
+        gap: 6px;
+        padding: 8px;
+    }
+
+    .unit-card {
+        gap: 7px;
+        padding: 10px;
+    }
+
+    .unit-name {
+        font-size: 12px;
+    }
+
+    .unit-price {
+        font-size: 11px;
+    }
+}
+
+/* ======================================
+   REDUCED MOTION
+====================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .unit-modal {
+        animation: none;
+    }
+
+    .unit-card,
+    .unit-modal-close {
+        transition: none;
+    }
+}

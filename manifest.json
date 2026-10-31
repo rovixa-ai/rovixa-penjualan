@@ -1,0 +1,28 @@
+
+{
+    "id": "/rovixa-pos/KasirPenjualan/",
+    "name": "Rovixa Kasir Penjualan",
+    "short_name": "Kasir Penjualan",
+    "description": "Aplikasi kasir penjualan Rovixa POS",
+    "lang": "id-ID",
+    "start_url": "/rovixa-pos/KasirPenjualan/",
+    "scope": "/rovixa-pos/KasirPenjualan/",
+    "display": "standalone",
+    "orientation": "any",
+    "background_color": "#f8fbfa",
+    "theme_color": "#059669",
+    "icons": [
+        {
+            "src": "./icons/penjualan-icon-192.svg",
+            "sizes": "192x192",
+            "type": "image/svg+xml",
+            "purpose": "any"
+        },
+        {
+            "src": "./icons/penjualan-icon-512.svg",
+            "sizes": "512x512",
+            "type": "image/svg+xml",
+            "purpose": "any"
+        }
+    ]
+}

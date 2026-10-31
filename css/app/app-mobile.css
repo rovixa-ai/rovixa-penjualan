@@ -1,0 +1,432 @@
+/* ======================================
+   TREEHOUSE POS
+   APP MOBILE RENDER
+   PREMIUM EMERALD STYLE
+   CSS KHUSUS MOBILE
+====================================== */
+
+@media (max-width: 768px) {
+
+    .app-mobile-render-container {
+        width: 100%;
+        flex-shrink: 0;
+    }
+
+    .app-main-frame {
+        min-height: 100vh;
+        min-height: 100dvh;
+        background: #f5f9f7;
+    }
+
+    #pageContent.sidebar-app-content {
+        width: 100%;
+        min-width: 0;
+        padding-bottom: 0;
+        box-sizing: border-box;
+    }
+
+    .sidebar-app-content {
+        flex: 1 0 auto;
+        min-height: 0;
+    }
+
+}
+
+
+/* ======================================
+   MOBILE HAMBURGER NAVIGATION
+====================================== */
+
+.sidebar-mobile {
+    position: fixed;
+    top: max(14px, env(safe-area-inset-top));
+    right: 14px;
+    z-index: 2147483000;
+
+    width: auto;
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    pointer-events: none;
+}
+
+
+/* ======================================
+   HAMBURGER BUTTON
+====================================== */
+
+.sidebar-mobile-toggle {
+    width: 46px;
+    height: 46px;
+
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+
+    padding: 0;
+
+    border: 1px solid rgba(167, 216, 191, 0.9);
+    border-radius: 14px;
+
+    background: linear-gradient(
+        145deg,
+        rgba(255, 255, 255, 0.98) 0%,
+        rgba(240, 250, 245, 0.97) 100%
+    );
+
+    color: #047857;
+
+    box-shadow:
+        0 5px 16px rgba(16, 60, 40, 0.10),
+        0 2px 5px rgba(16, 185, 129, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.95);
+
+    cursor: pointer;
+    pointer-events: auto;
+
+    -webkit-tap-highlight-color: transparent;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+.sidebar-mobile-toggle span {
+    width: 20px;
+    height: 2px;
+
+    display: block;
+
+    border-radius: 3px;
+
+    background: linear-gradient(
+        90deg,
+        #059669,
+        #047857
+    );
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease,
+        background 0.2s ease;
+}
+
+.sidebar-mobile-toggle:active {
+    transform: scale(0.96);
+    box-shadow:
+        0 2px 7px rgba(16, 60, 40, 0.12),
+        inset 0 1px 2px rgba(16, 185, 129, 0.08);
+}
+
+.sidebar-mobile.menu-open .sidebar-mobile-toggle {
+    border-color: #86d9b0;
+    background: linear-gradient(
+        145deg,
+        #ecfdf5 0%,
+        #d9f7e8 100%
+    );
+}
+
+
+/* ======================================
+   HAMBURGER ANIMATION
+====================================== */
+
+.sidebar-mobile.menu-open
+.sidebar-mobile-toggle span:first-child {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.sidebar-mobile.menu-open
+.sidebar-mobile-toggle span:nth-child(2) {
+    opacity: 0;
+}
+
+.sidebar-mobile.menu-open
+.sidebar-mobile-toggle span:last-child {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+
+/* ======================================
+   DROPDOWN MENU
+====================================== */
+
+.sidebar-mobile-menu {
+    width: 165px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    margin-top: 9px;
+    padding: 8px;
+
+    border: 1px solid #cfe5d9;
+    border-radius: 15px;
+
+    background: linear-gradient(
+        145deg,
+        rgba(255, 255, 255, 0.99) 0%,
+        rgba(247, 251, 248, 0.99) 100%
+    );
+
+    box-shadow:
+        0 12px 32px rgba(16, 60, 40, 0.14),
+        0 3px 8px rgba(16, 185, 129, 0.07),
+        inset 0 1px 0 rgba(255, 255, 255, 0.95);
+
+    pointer-events: auto;
+
+    transform-origin: top right;
+    animation: sidebarMobileMenuIn 0.18s ease-out;
+}
+
+.sidebar-mobile-menu[hidden] {
+    display: none !important;
+}
+
+
+/* ======================================
+   MENU ITEM
+====================================== */
+
+.sidebar-mobile-item {
+    
+    min-width: 0;
+    min-height: 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+
+    padding: 9px 10px;
+
+    border: 1px solid transparent;
+    border-radius: 10px;
+
+    background: transparent;
+    color: #52645a;
+
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 500;
+    text-align: left;
+
+    cursor: pointer;
+
+    -webkit-tap-highlight-color: transparent;
+
+    transition:
+        background 0.18s ease,
+        color 0.18s ease,
+        border-color 0.18s ease,
+        box-shadow 0.18s ease,
+        transform 0.18s ease;
+}
+
+.sidebar-mobile-item:hover {
+    background: linear-gradient(
+        135deg,
+        #f0faf5 0%,
+        #e8f7ef 100%
+    );
+
+    border-color: #d6eee1;
+    color: #047857;
+}
+
+.sidebar-mobile-item:active {
+    background: #dcfce7;
+    border-color: #b7e8ce;
+    transform: scale(0.98);
+}
+
+
+/* ======================================
+   MENU ICON
+====================================== */
+
+.sidebar-mobile-icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 7px;
+
+    color: #71877a;
+    font-size: 19px;
+    line-height: 1;
+
+    transition:
+        color 0.18s ease,
+        background 0.18s ease,
+        transform 0.18s ease;
+}
+
+.sidebar-mobile-item:hover .sidebar-mobile-icon {
+    color: #059669;
+    transform: translateY(-1px);
+}
+
+.sidebar-mobile-item.active .sidebar-mobile-icon {
+    color: #047857;
+}
+
+
+/* ======================================
+   MENU LABEL
+====================================== */
+
+.sidebar-mobile-label {
+    display: block;
+
+    min-width: 0;
+    overflow: hidden;
+
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.4;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+
+/* ======================================
+   ACTIVE MENU
+====================================== */
+
+.sidebar-mobile-item.active {
+    position: relative;
+
+    background: linear-gradient(
+        135deg,
+        #ecfdf5 0%,
+        #d9f7e8 100%
+    );
+
+    border-color: #b7e8ce;
+    color: #047857;
+
+    box-shadow:
+        0 2px 6px rgba(16, 185, 129, 0.06),
+        inset 0 1px 0 rgba(255, 255, 255, 0.85);
+}
+
+.sidebar-mobile-item.active::before {
+    content: "";
+
+    position: absolute;
+    top: 8px;
+    bottom: 8px;
+    left: 0;
+
+    width: 3px;
+
+    border-radius: 0 4px 4px 0;
+
+    background: linear-gradient(
+        180deg,
+        #34d399,
+        #059669
+    );
+}
+
+
+/* ======================================
+   INTERACTION
+====================================== */
+
+.sidebar-mobile-item:focus-visible,
+.sidebar-mobile-toggle:focus-visible {
+    outline: 2px solid #10b981;
+    outline-offset: 3px;
+}
+
+.sidebar-mobile-item:focus:not(:focus-visible),
+.sidebar-mobile-toggle:focus:not(:focus-visible) {
+    outline: none;
+}
+
+
+/* ======================================
+   MENU ANIMATION
+====================================== */
+
+@keyframes sidebarMobileMenuIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+/* ======================================
+   SMALL MOBILE
+====================================== */
+
+@media (max-width: 360px) {
+
+    .sidebar-mobile {
+        top: max(10px, env(safe-area-inset-top));
+        right: 10px;
+    }
+
+    .sidebar-mobile-toggle {
+        width: 42px;
+        height: 42px;
+        border-radius: 12px;
+    }
+
+    .sidebar-mobile-menu {
+        width: 165px;
+        padding: 7px;
+        border-radius: 13px;
+    }
+
+    .sidebar-mobile-item {
+        min-height: 42px;
+        padding: 8px 9px;
+        gap: 8px;
+    }
+
+}
+
+
+/* ======================================
+   DESKTOP
+====================================== */
+
+@media (min-width: 769px) {
+
+    .app-mobile-render-container {
+        display: none;
+    }
+
+    .sidebar-mobile {
+        display: none;
+    }
+
+    #pageContent.sidebar-app-content {
+        padding-bottom: 0;
+    }
+
+}

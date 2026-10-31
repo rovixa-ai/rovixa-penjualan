@@ -1,0 +1,464 @@
+/* ======================================
+   TREEHOUSE POS
+   SALES BARCODE CAMERA SCANNER
+   MOBILE CSS
+====================================== */
+
+@media (max-width: 768px) {
+
+    /* ======================================
+       MODAL WRAPPER
+    ====================================== */
+
+    .sales-barcode-scanner {
+        position: fixed;
+        inset: 0;
+        z-index: 2147483647;
+
+        width: 100%;
+        height: 100%;
+        height: 100dvh;
+    }
+
+    .sales-barcode-scanner[hidden] {
+        display: none !important;
+    }
+
+
+    /* ======================================
+       OVERLAY
+    ====================================== */
+
+    .sales-barcode-scanner-overlay {
+        position: absolute;
+        inset: 0;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 100%;
+        height: 100%;
+
+        padding:
+            max(12px, env(safe-area-inset-top))
+            12px
+            max(12px, env(safe-area-inset-bottom));
+
+        background: rgba(15, 23, 42, 0.88);
+
+        box-sizing: border-box;
+        overflow-y: auto;
+        overscroll-behavior: contain;
+    }
+
+
+    /* ======================================
+       SCANNER CONTAINER
+    ====================================== */
+
+    .sales-barcode-scanner-container {
+        position: relative;
+
+        display: flex;
+        flex-direction: column;
+
+        width: 100%;
+        max-width: 520px;
+        max-height: 100%;
+
+        margin: auto;
+
+        overflow: hidden;
+
+        background: #ffffff;
+
+        border: 1px solid #e2e8f0;
+        border-radius: 14px;
+
+        box-shadow: 0 16px 45px rgba(0, 0, 0, 0.35);
+
+        box-sizing: border-box;
+
+        animation: salesBarcodeMobileIn 0.2s ease-out;
+    }
+
+
+    /* ======================================
+       HEADER
+    ====================================== */
+
+    .sales-barcode-scanner-header {
+        position: relative;
+        z-index: 2;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        flex-shrink: 0;
+
+        min-height: 54px;
+        padding: 10px 14px;
+
+        background: #ffffff;
+
+        border-bottom: 1px solid #e5e7eb;
+
+        box-sizing: border-box;
+    }
+
+    .sales-barcode-scanner-header strong {
+        color: #1e293b;
+
+        font-size: 16px;
+        font-weight: 700;
+
+        line-height: 1.4;
+    }
+
+
+    /* ======================================
+       CLOSE BUTTON
+    ====================================== */
+
+    .sales-barcode-scanner-close {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        flex-shrink: 0;
+
+        width: 40px;
+        height: 40px;
+
+        margin: 0;
+        padding: 0;
+
+        color: #64748b;
+
+        background: #f1f5f9;
+
+        border: none;
+        border-radius: 10px;
+
+        font-family: inherit;
+        font-size: 28px;
+        font-weight: 400;
+
+        line-height: 1;
+
+        cursor: pointer;
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .sales-barcode-scanner-close:active {
+        color: #dc2626;
+        background: #fee2e2;
+
+        transform: scale(0.96);
+    }
+
+
+    /* ======================================
+       CAMERA PREVIEW
+    ====================================== */
+
+    .sales-barcode-scanner-preview {
+        position: relative;
+
+        flex: 0 1 auto;
+
+        width: 100%;
+        aspect-ratio: 3 / 4;
+
+        min-height: 240px;
+        max-height: calc(100dvh - 110px);
+
+        overflow: hidden;
+
+        background: #020617;
+
+        isolation: isolate;
+        box-sizing: border-box;
+    }
+
+
+    /* ======================================
+       VIDEO
+    ====================================== */
+
+    .sales-barcode-scanner-video {
+        position: absolute;
+        inset: 0;
+
+        display: block;
+
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+
+        background: #020617;
+    }
+
+
+    /* ======================================
+       SCANNER FRAME
+    ====================================== */
+
+    .sales-barcode-scanner-frame {
+        position: absolute;
+
+        top: 50%;
+        left: 50%;
+
+        width: 86%;
+        height: 24%;
+
+        transform: translate(-50%, -50%);
+
+        border: 2px solid #22c55e;
+        border-radius: 8px;
+
+        box-shadow:
+            0 0 0 9999px rgba(0, 0, 0, 0.3),
+            0 0 16px rgba(34, 197, 94, 0.25);
+
+        pointer-events: none;
+        box-sizing: border-box;
+    }
+
+
+    /* ======================================
+       SCANNER CORNERS
+    ====================================== */
+
+    .sales-barcode-scanner-frame::before,
+    .sales-barcode-scanner-frame::after {
+        position: absolute;
+
+        width: 20px;
+        height: 20px;
+
+        content: "";
+
+        border-color: #4ade80;
+        border-style: solid;
+    }
+
+    .sales-barcode-scanner-frame::before {
+        top: -3px;
+        left: -3px;
+
+        border-width: 4px 0 0 4px;
+
+        border-top-left-radius: 6px;
+    }
+
+    .sales-barcode-scanner-frame::after {
+        right: -3px;
+        bottom: -3px;
+
+        border-width: 0 4px 4px 0;
+
+        border-bottom-right-radius: 6px;
+    }
+
+
+    /* ======================================
+       SCAN LINE
+    ====================================== */
+
+    .sales-barcode-scanner-line {
+        position: absolute;
+
+        top: 0;
+        left: 3%;
+
+        width: 94%;
+        height: 2px;
+
+        background: #4ade80;
+
+        box-shadow:
+            0 0 8px rgba(74, 222, 128, 0.9),
+            0 0 16px rgba(74, 222, 128, 0.5);
+
+        animation: salesBarcodeScanLine 2s ease-in-out infinite;
+    }
+
+
+    /* ======================================
+       STATUS MESSAGE
+    ====================================== */
+
+    .sales-barcode-scanner-message {
+        position: absolute;
+
+        right: 10px;
+        bottom: 10px;
+        left: 10px;
+
+        z-index: 2;
+
+        padding: 10px 12px;
+
+        color: #ffffff;
+
+        background: rgba(15, 23, 42, 0.88);
+
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 9px;
+
+        font-size: 12px;
+        font-weight: 500;
+
+        line-height: 1.5;
+        text-align: center;
+
+        overflow-wrap: anywhere;
+        box-sizing: border-box;
+
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+    }
+
+
+    /* ======================================
+       ANIMATIONS
+    ====================================== */
+
+    @keyframes salesBarcodeScanLine {
+        0% {
+            top: 0;
+        }
+
+        50% {
+            top: calc(100% - 2px);
+        }
+
+        100% {
+            top: 0;
+        }
+    }
+
+    @keyframes salesBarcodeMobileIn {
+        from {
+            opacity: 0;
+            transform: translateY(8px) scale(0.98);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+    }
+
+
+    /* ======================================
+       SMALL MOBILE
+    ====================================== */
+
+    @media (max-width: 380px) {
+
+        .sales-barcode-scanner-overlay {
+            padding-right: 8px;
+            padding-left: 8px;
+        }
+
+        .sales-barcode-scanner-container {
+            border-radius: 12px;
+        }
+
+        .sales-barcode-scanner-header {
+            min-height: 50px;
+            padding: 8px 10px;
+        }
+
+        .sales-barcode-scanner-header strong {
+            font-size: 15px;
+        }
+
+        .sales-barcode-scanner-close {
+            width: 36px;
+            height: 36px;
+        }
+
+        .sales-barcode-scanner-preview {
+            min-height: 220px;
+        }
+
+        .sales-barcode-scanner-frame {
+            width: 90%;
+            height: 26%;
+        }
+
+        .sales-barcode-scanner-message {
+            right: 8px;
+            bottom: 8px;
+            left: 8px;
+
+            padding: 8px 10px;
+
+            font-size: 11px;
+        }
+    }
+
+
+    /* ======================================
+       SHORT SCREEN / LANDSCAPE
+    ====================================== */
+
+    @media (max-height: 500px) {
+
+        .sales-barcode-scanner-overlay {
+            align-items: flex-start;
+
+            padding-top: 8px;
+            padding-bottom: 8px;
+        }
+
+        .sales-barcode-scanner-container {
+            max-height: none;
+        }
+
+        .sales-barcode-scanner-header {
+            min-height: 44px;
+            padding: 5px 10px;
+        }
+
+        .sales-barcode-scanner-header strong {
+            font-size: 14px;
+        }
+
+        .sales-barcode-scanner-close {
+            width: 34px;
+            height: 34px;
+        }
+
+        .sales-barcode-scanner-preview {
+            aspect-ratio: 16 / 9;
+
+            min-height: 180px;
+            max-height: none;
+        }
+
+        .sales-barcode-scanner-frame {
+            width: 70%;
+            height: 35%;
+        }
+
+        .sales-barcode-scanner-message {
+            right: 8px;
+            bottom: 8px;
+            left: 8px;
+
+            padding: 6px 10px;
+
+            font-size: 11px;
+        }
+    }
+
+}

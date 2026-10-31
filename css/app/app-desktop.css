@@ -1,0 +1,376 @@
+/* ======================================
+   TREEHOUSE POS
+   APP DESKTOP RENDER
+   PREMIUM EMERALD STYLE
+====================================== */
+
+
+/* ======================================
+   DESKTOP SIDEBAR
+====================================== */
+
+.sidebar-desktop {
+    width: 240px;
+    min-width: 240px;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    background: linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #f8fbf9 100%
+    );
+    border-right: 1px solid #d6e2dd;
+    color: #17221e;
+    z-index: 100;
+    box-shadow: 4px 0 18px rgba(16, 185, 129, 0.035);
+}
+
+
+/* ======================================
+   SIDEBAR HEADER
+====================================== */
+
+.sidebar-desktop-header {
+    min-height: 70px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #dce8e2;
+    background:
+        radial-gradient(
+            circle at top left,
+            rgba(52, 211, 153, 0.10),
+            transparent 65%
+        ),
+        #ffffff;
+}
+
+.sidebar-desktop-header .app-header-logo {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 12px;
+    background: linear-gradient(
+        135deg,
+        #34d399 0%,
+        #10b981 45%,
+        #047857 100%
+    );
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 700;
+    box-shadow:
+        0 4px 10px rgba(16, 185, 129, 0.22),
+        inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.sidebar-desktop-header .app-header-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.sidebar-desktop-header .app-header-store-name {
+    min-width: 0;
+    overflow: hidden;
+    color: #17221e;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.4;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+/* ======================================
+   SIDEBAR NAVIGATION
+====================================== */
+
+.sidebar-desktop-list {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 18px 12px;
+    overflow-y: auto;
+    box-sizing: border-box;
+    scrollbar-width: thin;
+    scrollbar-color: #b7d9ca transparent;
+}
+
+.sidebar-desktop-list::-webkit-scrollbar {
+    width: 5px;
+}
+
+.sidebar-desktop-list::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.sidebar-desktop-list::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #b7d9ca;
+}
+
+.sidebar-desktop-list::-webkit-scrollbar-thumb:hover {
+    background: #6dbb98;
+}
+
+.sidebar-desktop-item {
+    width: 100%;
+    min-height: 46px;
+    padding: 0 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    background: transparent;
+    color: #68766f;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: left;
+    cursor: pointer;
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+.sidebar-desktop-item span:first-child {
+    width: 22px;
+    min-width: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #7a8b82;
+    font-size: 18px;
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.sidebar-desktop-item:hover {
+    background: linear-gradient(
+        135deg,
+        #f0faf5 0%,
+        #e8f7ef 100%
+    );
+    border-color: #d6eee1;
+    color: #047857;
+}
+
+.sidebar-desktop-item:hover span:first-child {
+    color: #059669;
+    transform: translateX(1px);
+}
+
+.sidebar-desktop-item.active {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(
+        135deg,
+        #ecfdf5 0%,
+        #d9f7e8 100%
+    );
+    border-color: #b7e8ce;
+    color: #047857;
+    font-weight: 600;
+    box-shadow:
+        0 3px 8px rgba(16, 185, 129, 0.07),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.sidebar-desktop-item.active::before {
+    content: "";
+    position: absolute;
+    top: 8px;
+    bottom: 8px;
+    left: 0;
+    width: 3px;
+    border-radius: 0 4px 4px 0;
+    background: linear-gradient(
+        180deg,
+        #34d399,
+        #059669
+    );
+}
+
+.sidebar-desktop-item.active span:first-child {
+    color: #059669;
+}
+
+
+/* ======================================
+   SIDEBAR FOOTER
+====================================== */
+
+.sidebar-desktop-footer {
+    padding: 14px 12px;
+    border-top: 1px solid #dce8e2;
+    background: linear-gradient(
+        180deg,
+        rgba(248, 251, 249, 0.4),
+        #f8fbf9
+    );
+}
+
+.sidebar-desktop-logout {
+    width: 100%;
+    min-height: 44px;
+    padding: 0 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    background: #e2dede00;
+    color: #b45353;
+    font-family: inherit;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: left;
+    cursor: pointer;
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.sidebar-desktop-logout span:first-child {
+    width: 22px;
+    min-width: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+}
+
+.sidebar-desktop-logout:hover {
+    background: linear-gradient(
+        135deg,
+        #fff5f5 0%,
+        #feecec 100%
+    );
+    border-color: #f5d3d3;
+    color: #b91c1c;
+    box-shadow: 0 3px 8px rgba(185, 28, 28, 0.06);
+}
+
+
+/* ======================================
+   DESKTOP HEADER
+====================================== */
+
+.app-desktop-header {
+    width: 100%;
+    height: 70px;
+    min-height: 70px;
+    padding: 0 24px;
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    box-sizing: border-box;
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(52, 211, 153, 0.08),
+            transparent 45%
+        ),
+        linear-gradient(
+            135deg,
+            #ffffff 0%,
+            #f8fbf9 100%
+        );
+    border-bottom: 1px solid #d6e2dd;
+    color: #17221e;
+    position: relative;
+    z-index: 50;
+    box-shadow: 0 3px 12px rgba(16, 60, 40, 0.035);
+}
+
+.app-desktop-header-title {
+    min-width: 0;
+    display: flex;
+    align-items: center;
+}
+
+.app-desktop-header-title .app-header-store-name {
+    overflow: hidden;
+    color: #17221e;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.4;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.app-desktop-header-user {
+    max-width: 220px;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 8px 14px;
+    border: 1px solid #cfe5d9;
+    border-radius: 20px;
+    background: linear-gradient(
+        135deg,
+        #f0faf5 0%,
+        #e8f7ef 100%
+    );
+    box-shadow:
+        0 2px 6px rgba(16, 185, 129, 0.045),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.app-desktop-header-user:hover {
+    border-color: #a8d9bf;
+    background: linear-gradient(
+        135deg,
+        #e8f7ef 0%,
+        #dcfce7 100%
+    );
+    box-shadow: 0 4px 10px rgba(16, 185, 129, 0.08);
+}
+
+.app-desktop-header-user .app-header-user {
+    overflow: hidden;
+    color: #166534;
+    font-size: 13px;
+    font-weight: 600;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+/* ======================================
+   RESPONSIVE
+====================================== */
+
+@media (max-width: 768px) {
+
+    .sidebar-desktop,
+    .app-desktop-header {
+        display: none;
+    }
+
+}

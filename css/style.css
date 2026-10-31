@@ -1,0 +1,174 @@
+
+
+
+
+
+
+/* ======================================
+   MODULE CSS
+====================================== */
+
+@import url("./login.css");
+
+@import url("./notification.css");
+
+@import url("./loading.css");
+@import url("./dialog.css");
+
+@import url("./cart.css");
+
+@import url("./unit-modal.css");
+
+@import url("./payment-modal.css");
+
+@import url("./sales/sales-desktop.css");
+@import url("./sales/sales-mobile.css");
+
+
+@import url("./sales/retur-desktop.css");
+@import url("./sales/retur-mobile.css");
+
+@import url("./sales/barcode-desktop.css");
+@import url("./sales/barcode-mobile.css");
+
+@import url("./report/report-desktop.css");
+@import url("./report/report-mobile.css");
+@import url("./report/report-detail-desktop.css");
+@import url("./report/report-detail-mobile.css");
+@import url("./report/report-print-desktop.css");
+@import url("./report/report-print-mobile.css");
+
+@import url("./app/app-desktop.css");
+@import url("./app/app-mobile.css");
+
+
+
+
+
+
+
+/* ======================================
+   TREEHOUSE POS
+   APP
+   LAYOUT CSS
+====================================== */
+
+/* ======================================
+   DISABLE APP SCROLL
+====================================== */
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+/* ======================================
+   APP LAYOUT
+====================================== */
+
+.sidebar-app-layout {
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    min-height: 0;
+
+    display: flex;
+    position: relative;
+
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+/* ======================================
+   MAIN FRAME
+====================================== */
+
+.app-main-frame {
+    flex: 1;
+    width: 100%;
+    min-width: 0;
+    height: 100%;
+    min-height: 0;
+
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+/* ======================================
+   MOBILE RENDER CONTAINER
+====================================== */
+
+.app-mobile-render-container {
+    width: 100%;
+    flex-shrink: 0;
+    position: relative;
+
+    box-sizing: border-box;
+}
+
+/* ======================================
+   PAGE CONTENT
+====================================== */
+
+.sidebar-app-content {
+    flex: 1;
+    width: 100%;
+    min-width: 0;
+    min-height: 0;
+
+    position: relative;
+
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+/* ======================================
+   MOBILE
+====================================== */
+
+@media (max-width: 768px) {
+
+    .sidebar-app-layout {
+        flex-direction: column;
+    }
+
+    .app-main-frame {
+        width: 100%;
+        flex: 1;
+    }
+
+    .app-mobile-render-container {
+        width: 100%;
+        flex-shrink: 0;
+    }
+
+    .sidebar-app-content {
+        
+        width: 100%;
+        flex: 1;
+        min-height: 0;
+
+        padding-bottom: 0;
+    }
+
+}
+
+/* ======================================
+   DESKTOP
+====================================== */
+
+@media (min-width: 769px) {
+
+    .sidebar-app-content {
+        padding-bottom: 0;
+    }
+
+}
+

@@ -1,0 +1,216 @@
+/* ======================================
+   TREEHOUSE POS
+   REPORT RETUR CONFIRM
+   MOBILE CSS
+====================================== */
+
+@media (max-width: 768px) {
+
+    /* ======================================
+       OVERLAY
+    ====================================== */
+
+    .report-retur-confirm-modal {
+        position: fixed;
+        inset: 0;
+        z-index: 2147483647;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 100%;
+        height: 100%;
+        height: 100dvh;
+
+        padding: 16px;
+
+        background: rgba(0, 0, 0, 0.55);
+
+        overflow-y: auto;
+        overscroll-behavior: contain;
+
+        -webkit-tap-highlight-color: transparent;
+    }
+
+
+    /* ======================================
+       CONFIRM BOX
+    ====================================== */
+
+    .report-confirm-box {
+        position: relative;
+
+        width: 100%;
+        max-width: 420px;
+
+        margin: auto;
+        padding: 22px 18px;
+
+        background: #ffffff;
+
+        border-radius: 14px;
+
+        box-shadow:
+            0 12px 35px rgba(0, 0, 0, 0.2);
+
+        box-sizing: border-box;
+
+        animation: reportReturScaleIn 0.2s ease-out;
+    }
+
+
+    /* ======================================
+       MESSAGE
+    ====================================== */
+
+    .report-confirm-message {
+        width: 100%;
+
+        margin: 0 0 22px;
+        padding: 0;
+
+        color: #333333;
+
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.7;
+
+        text-align: center;
+
+        white-space: pre-line;
+        overflow-wrap: anywhere;
+
+        box-sizing: border-box;
+    }
+
+
+    /* ======================================
+       ACTIONS
+    ====================================== */
+
+    .report-confirm-actions {
+        display: flex;
+        flex-direction: row;
+
+        align-items: stretch;
+
+        gap: 10px;
+
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+
+    /* ======================================
+       BUTTON BASE
+    ====================================== */
+
+    .report-confirm-cancel,
+    .report-confirm-ok {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        flex: 1;
+        min-width: 0;
+        min-height: 46px;
+
+        margin: 0;
+        padding: 10px 12px;
+
+        border: none;
+        border-radius: 9px;
+
+        font-family: inherit;
+        font-size: 14px;
+        font-weight: 600;
+
+        line-height: 1.4;
+        text-align: center;
+
+        cursor: pointer;
+
+        box-sizing: border-box;
+
+        transition:
+            background 0.2s ease,
+            transform 0.1s ease;
+    }
+
+
+    /* ======================================
+       CANCEL BUTTON
+    ====================================== */
+
+    .report-confirm-cancel {
+        color: #444444;
+
+        background: #eeeeee;
+
+        border: 1px solid #dddddd;
+    }
+
+    .report-confirm-cancel:active {
+        background: #dddddd;
+        transform: scale(0.98);
+    }
+
+
+    /* ======================================
+       CONFIRM BUTTON
+    ====================================== */
+
+    .report-confirm-ok {
+        color: #ffffff;
+
+        background: #f59e0b;
+
+        border: 1px solid #f59e0b;
+    }
+
+    .report-confirm-ok:active {
+        background: #d97706;
+        border-color: #d97706;
+
+        transform: scale(0.98);
+    }
+
+
+    /* ======================================
+       SMALL MOBILE
+    ====================================== */
+
+    @media (max-width: 380px) {
+
+        .report-retur-confirm-modal {
+            padding: 12px;
+        }
+
+        .report-confirm-box {
+            padding: 18px 14px;
+
+            border-radius: 12px;
+        }
+
+        .report-confirm-message {
+            margin-bottom: 18px;
+
+            font-size: 13px;
+            line-height: 1.65;
+        }
+
+        .report-confirm-actions {
+            gap: 8px;
+        }
+
+        .report-confirm-cancel,
+        .report-confirm-ok {
+            min-height: 44px;
+            padding: 9px 8px;
+
+            font-size: 13px;
+        }
+    }
+}

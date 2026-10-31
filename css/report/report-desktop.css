@@ -1,0 +1,757 @@
+
+/* ======================================
+   TREEHOUSE POS
+   REPORT MODULE
+   CSS DESKTOP
+   PREMIUM EMERALD
+====================================== */
+
+@media (min-width: 769px) {
+
+/* ======================================
+   MODAL OVERLAY
+====================================== */
+
+.report-modal-overlay-desktop {
+    position: fixed;
+    inset: 0;
+    z-index: 21474;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 24px;
+    background: rgba(15, 23, 42, 0.58);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    box-sizing: border-box;
+}
+
+/* ======================================
+   REPORT MODAL
+====================================== */
+
+.report-modal-desktop {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1500px;
+    height: 100%;
+    max-height: calc(100vh - 48px);
+    overflow: hidden;
+    background: #f7faf9;
+    border: 1px solid #d6e2dd;
+    border-radius: 18px;
+    box-shadow:
+        0 28px 80px rgba(15, 23, 42, 0.20),
+        0 8px 24px rgba(15, 23, 42, 0.08);
+    box-sizing: border-box;
+}
+
+/* ======================================
+   REPORT PAGE
+====================================== */
+
+.report-page-desktop {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-width: 0;
+    min-height: 0;
+    height: 100%;
+    gap: 20px;
+    padding: 24px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #a7c7b8 #f1f7f4;
+    box-sizing: border-box;
+}
+
+.report-page-desktop::-webkit-scrollbar {
+    width: 8px;
+}
+
+.report-page-desktop::-webkit-scrollbar-track {
+    background: #f1f7f4;
+}
+
+.report-page-desktop::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background: #a7c7b8;
+}
+
+/* ======================================
+   HEADER
+====================================== */
+
+.report-header-desktop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    width: 100%;
+    flex-shrink: 0;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #dce8e2;
+    box-sizing: border-box;
+}
+
+.report-header-desktop > div:first-child {
+    min-width: 0;
+}
+
+.report-header-desktop h2 {
+    margin: 0;
+    color: #0b734d;
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: -0.6px;
+}
+
+.report-header-desktop p {
+    margin: 7px 0 0;
+    color: #68766f;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+/* ======================================
+   HEADER ACTIONS
+====================================== */
+
+.report-header-actions-desktop {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+/* ======================================
+   BUTTON
+====================================== */
+
+.report-button-desktop {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 90px;
+    min-height: 40px;
+    padding: 0 16px;
+    gap: 8px;
+    border: 1px solid #d6e2dd;
+    border-radius: 10px;
+    background: linear-gradient(145deg, #ffffff 0%, #f8fbfa 100%);
+    color: #34463d;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.3;
+    white-space: nowrap;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(15, 23, 42, 0.025);
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+.report-button-desktop img {
+    width: 20px;
+    height: 20px;
+    display: block;
+    object-fit: contain;
+}
+
+.report-button-desktop:hover {
+    background: #f0f8f4;
+    border-color: #a7cbb8;
+    color: #047857;
+    box-shadow: 0 5px 12px rgba(5, 150, 105, 0.08);
+}
+
+.report-button-desktop:active {
+    transform: translateY(1px);
+}
+
+.report-button-desktop.primary {
+    border-color: #059669;
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: #ffffff;
+    box-shadow:
+        0 5px 12px rgba(5, 150, 105, 0.17),
+        inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+
+.report-button-desktop.primary:hover {
+    border-color: #047857;
+    background: linear-gradient(135deg, #059669 0%, #047857 100%);
+    box-shadow: 0 7px 16px rgba(5, 150, 105, 0.23);
+}
+
+/* ======================================
+   CLOSE BUTTON
+====================================== */
+
+.report-modal-close-desktop {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    padding: 0;
+    border: 1px solid #dce8e2;
+    border-radius: 10px;
+    background: #ffffff;
+    color: #68766f;
+    font-family: inherit;
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 1;
+    cursor: pointer;
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.report-modal-close-desktop:hover {
+    background: #fff5f5;
+    border-color: #fecaca;
+    color: #dc2626;
+    transform: rotate(3deg);
+}
+
+.report-button-desktop:focus-visible,
+.report-modal-close-desktop:focus-visible {
+    outline: 2px solid #10b981;
+    outline-offset: 3px;
+}
+
+/* ======================================
+   FILTER
+====================================== */
+
+.report-filter-desktop {
+    display: flex;
+    align-items: flex-end;
+    gap: 16px;
+    width: 100%;
+    flex-shrink: 0;
+    padding: 18px;
+    border: 1px solid #dce8e2;
+    border-radius: 14px;
+    background: linear-gradient(145deg, #ffffff 0%, #f8fbfa 100%);
+    box-shadow:
+        0 8px 20px rgba(15, 23, 42, 0.025),
+        0 2px 5px rgba(15, 23, 42, 0.02);
+    box-sizing: border-box;
+}
+
+.report-filter-group-desktop {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    width: 220px;
+    min-width: 180px;
+}
+
+.report-filter-group-desktop label {
+    color: #43564c;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.report-filter-group-desktop input,
+.report-filter-group-desktop select {
+    display: block;
+    width: 100%;
+    height: 42px;
+    min-width: 0;
+    padding: 0 12px;
+    border: 1px solid #d6e2dd;
+    border-radius: 9px;
+    outline: none;
+    background: #ffffff;
+    color: #17221e;
+    font-family: inherit;
+    font-size: 13px;
+    box-sizing: border-box;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.report-filter-group-desktop input:hover,
+.report-filter-group-desktop select:hover {
+    border-color: #a7cbb8;
+}
+
+.report-filter-group-desktop input:focus,
+.report-filter-group-desktop select:focus {
+    border-color: #10b981;
+    background: #fcfffd;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.12);
+}
+
+.report-filter-actions-desktop {
+    display: none;
+    align-items: center;
+    gap: 10px;
+    margin-left: auto;
+}
+
+/* ======================================
+   SUMMARY GRID
+====================================== */
+
+.report-summary-desktop {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 14px;
+    width: 100%;
+    flex-shrink: 0;
+    box-sizing: border-box;
+}
+
+/* ======================================
+   SUMMARY CARD
+====================================== */
+
+.report-card-desktop {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 12px;
+    min-width: 0;
+    min-height: 104px;
+    padding: 18px;
+    border: 1px solid #dce8e2;
+    border-radius: 14px;
+    background: linear-gradient(145deg, #ffffff 0%, #f8fbfa 100%);
+    box-shadow:
+        0 12px 28px rgba(15, 23, 42, 0.045),
+        0 2px 5px rgba(15, 23, 42, 0.025);
+    box-sizing: border-box;
+    overflow: hidden;
+    transition:
+        transform 0.22s ease,
+        box-shadow 0.22s ease,
+        border-color 0.22s ease;
+}
+
+.report-card-desktop::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #10b981, #34d399);
+    opacity: 0.85;
+}
+
+.report-card-desktop::after {
+    content: "";
+    position: absolute;
+    top: -44px;
+    right: -44px;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle,
+        rgba(16, 185, 129, 0.10) 0%,
+        rgba(16, 185, 129, 0.035) 48%,
+        transparent 72%
+    );
+    pointer-events: none;
+    transition:
+        transform 0.25s ease,
+        opacity 0.25s ease;
+}
+
+.report-card-desktop:hover {
+    transform: translateY(-3px);
+    border-color: #c0dacf;
+    box-shadow:
+        0 18px 34px rgba(15, 23, 42, 0.065),
+        0 5px 12px rgba(15, 23, 42, 0.035);
+}
+
+.report-card-desktop:hover::after {
+    transform: scale(1.25);
+}
+
+.report-card-desktop > span {
+    position: relative;
+    z-index: 1;
+    display: block;
+    color: #68766f;
+    font-size: 12px;
+    font-weight: 650;
+    line-height: 1.5;
+}
+
+.report-card-desktop > strong {
+    position: relative;
+    z-index: 1;
+    display: block;
+    min-width: 0;
+    color: #17221e;
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 1.35;
+    letter-spacing: -0.55px;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    font-variant-numeric: tabular-nums;
+}
+
+.report-card-desktop.total {
+    border-color: #b7e4d0;
+    background:
+        radial-gradient(circle at 100% 0%, rgba(52, 211, 153, 0.16), transparent 48%),
+        linear-gradient(145deg, #ffffff 0%, #f0fbf5 100%);
+    box-shadow:
+        0 12px 28px rgba(5, 150, 105, 0.075),
+        0 2px 5px rgba(15, 23, 42, 0.025);
+}
+
+.report-card-desktop.total::before {
+    height: 4px;
+    background: linear-gradient(90deg, #059669, #34d399);
+}
+
+.report-card-desktop.total > span {
+    color: #36735a;
+}
+
+.report-card-desktop.total > strong {
+    color: #047857;
+}
+
+.report-card-desktop.total:hover {
+    border-color: #86cbb0;
+    box-shadow:
+        0 18px 36px rgba(5, 150, 105, 0.12),
+        0 5px 12px rgba(15, 23, 42, 0.035);
+}
+
+.report-card-desktop.payment {
+    min-height: 96px;
+    background: linear-gradient(145deg, #ffffff 0%, #f8fbfa 100%);
+}
+
+.report-card-desktop.payment::before {
+    background: linear-gradient(90deg, #6ee7b7, #a7f3d0);
+}
+
+.report-card-desktop.payment > strong {
+    font-size: 18px;
+}
+
+.report-card-desktop.total-payment {
+    border-color: #c8e5d8;
+    background:
+        radial-gradient(circle at 100% 0%, rgba(16, 185, 129, 0.10), transparent 48%),
+        linear-gradient(145deg, #ffffff 0%, #f2faf6 100%);
+}
+
+.report-card-desktop.total-payment::before {
+    background: linear-gradient(90deg, #059669, #6ee7b7);
+}
+
+.report-card-desktop.total-payment > span {
+    color: #36735a;
+}
+
+.report-card-desktop.total-payment > strong {
+    color: #047857;
+}
+
+/* ======================================
+   TABLE
+====================================== */
+
+.report-table-wrapper-desktop {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-width: 0;
+    flex-shrink: 0;
+    border: 1px solid #dce8e2;
+    border-radius: 14px;
+    background: #ffffff;
+    overflow: hidden;
+    box-shadow:
+        0 12px 28px rgba(15, 23, 42, 0.04),
+        0 2px 5px rgba(15, 23, 42, 0.02);
+    box-sizing: border-box;
+}
+
+.report-table-header-desktop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    min-height: 60px;
+    padding: 16px 20px;
+    border-bottom: 1px solid #dce8e2;
+    background: linear-gradient(145deg, #ffffff 0%, #f8fbfa 100%);
+    box-sizing: border-box;
+}
+
+.report-table-header-desktop h3 {
+    margin: 0;
+    color: #17221e;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.report-table-scroll-desktop {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #a7c7b8 #f1f7f4;
+    box-sizing: border-box;
+}
+
+.report-table-scroll-desktop::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.report-table-scroll-desktop::-webkit-scrollbar-track {
+    background: #f1f7f4;
+}
+
+.report-table-scroll-desktop::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background: #a7c7b8;
+}
+
+.report-table-scroll-desktop::-webkit-scrollbar-thumb:hover {
+    background: #6da98d;
+}
+
+.report-table-desktop {
+    width: 100%;
+    min-width: 1000px;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: #ffffff;
+    color: #34463d;
+    font-size: 12px;
+    font-variant-numeric: tabular-nums;
+}
+
+.report-table-desktop thead {
+    background: #f1f7f4;
+}
+
+.report-table-desktop thead th {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    padding: 14px 16px;
+    border-bottom: 1px solid #d6e2dd;
+    background: #f1f7f4;
+    color: #43564c;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.5;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.report-table-desktop tbody td {
+    padding: 14px 16px;
+    border-bottom: 1px solid #edf3ef;
+    color: #34463d;
+    font-size: 12px;
+    line-height: 1.5;
+    white-space: nowrap;
+    background: #ffffff;
+    transition: background 0.15s ease;
+}
+
+.report-table-desktop tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.report-table-desktop tbody tr:hover td {
+    background: #f2faf6;
+}
+
+.report-table-desktop .report-empty-desktop {
+    height: 100px;
+    padding: 24px;
+    color: #84938b;
+    font-size: 13px;
+    font-weight: 500;
+    text-align: center;
+    white-space: normal;
+}
+
+.report-status.retur {
+    color: #dc2626 !important;
+    font-weight: 600;
+}
+
+/* ======================================
+   RESPONSIVE DESKTOP
+====================================== */
+
+@media (max-width: 1200px) {
+    .report-modal-overlay-desktop {
+        padding: 16px;
+    }
+
+    .report-modal-desktop {
+        max-height: calc(100vh - 32px);
+    }
+
+    .report-page-desktop {
+        gap: 16px;
+        padding: 20px;
+    }
+
+    .report-summary-desktop {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .report-card-desktop {
+        min-height: 96px;
+        padding: 15px;
+    }
+
+    .report-card-desktop > strong {
+        font-size: 18px;
+    }
+
+    .report-card-desktop.payment > strong {
+        font-size: 16px;
+    }
+
+    .report-filter-desktop {
+        gap: 12px;
+        padding: 15px;
+    }
+
+    .report-filter-group-desktop {
+        width: 200px;
+        min-width: 150px;
+    }
+}
+
+/* ======================================
+   PRINT
+====================================== */
+
+@media print {
+    .report-modal-overlay-desktop {
+        position: static;
+        display: block;
+        width: 100%;
+        height: auto;
+        padding: 0;
+        background: #ffffff;
+        overflow: visible;
+    }
+
+    .report-modal-desktop {
+        display: block;
+        width: 100%;
+        max-width: none;
+        height: auto;
+        max-height: none;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+        overflow: visible;
+    }
+
+    .report-page-desktop {
+        display: block;
+        width: 100%;
+        height: auto;
+        padding: 0;
+        overflow: visible;
+    }
+
+    .report-header-actions-desktop,
+    .report-filter-desktop {
+        display: none !important;
+    }
+
+    .report-summary-desktop {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 8px;
+        margin: 16px 0;
+    }
+
+    .report-card-desktop {
+        min-height: auto;
+        padding: 10px;
+        border: 1px solid #d1d5db;
+        box-shadow: none;
+        break-inside: avoid;
+    }
+
+    .report-card-desktop::before,
+    .report-card-desktop::after {
+        display: none;
+    }
+
+    .report-card-desktop > span {
+        font-size: 9px;
+    }
+
+    .report-card-desktop > strong {
+        font-size: 12px;
+    }
+
+    .report-table-wrapper-desktop {
+        overflow: visible;
+        border: 1px solid #d1d5db;
+        box-shadow: none;
+    }
+
+    .report-table-scroll-desktop {
+        overflow: visible;
+    }
+
+    .report-table-desktop {
+        width: 100%;
+        min-width: 0;
+        font-size: 9px;
+    }
+
+    .report-table-desktop thead th,
+    .report-table-desktop tbody td {
+        position: static;
+        padding: 6px;
+        font-size: 9px;
+        white-space: normal;
+    }
+}
+
+}

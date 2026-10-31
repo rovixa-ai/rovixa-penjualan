@@ -1,0 +1,976 @@
+
+/* ======================================
+   TREEHOUSE POS
+   REPORT DETAIL
+   CSS DESKTOP
+   PREMIUM EMERALD DESIGN
+====================================== */
+
+@media (min-width: 769px) {
+
+    /* ======================================
+       OVERLAY
+    ====================================== */
+
+    .report-detail-overlay {
+        position: fixed;
+        inset: 0;
+        z-index: 214748;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 100%;
+        height: 100%;
+        padding: 24px;
+
+        background: rgba(15, 35, 27, 0.56);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+
+        box-sizing: border-box;
+    }
+
+
+    /* ======================================
+       MODAL
+    ====================================== */
+
+    .report-detail-modal {
+        display: flex;
+        flex-direction: column;
+
+        position: relative;
+
+        width: 100%;
+        max-width: 1100px;
+
+        height: auto;
+        max-height: calc(100vh - 48px);
+
+        overflow-x: hidden;
+        overflow-y: auto;
+
+        background: linear-gradient(
+            145deg,
+            #ffffff 0%,
+            #fbfdfc 100%
+        );
+
+        border: 1px solid #d6e2dd;
+        border-radius: 18px;
+
+        box-shadow:
+            0 28px 80px rgba(15, 35, 27, 0.24),
+            0 8px 24px rgba(15, 35, 27, 0.10),
+            inset 0 1px 0 rgba(255, 255, 255, 0.95);
+
+        scrollbar-width: thin;
+        scrollbar-color: #a7c7b8 transparent;
+
+        box-sizing: border-box;
+    }
+
+    .report-detail-modal::-webkit-scrollbar {
+        width: 7px;
+    }
+
+    .report-detail-modal::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    .report-detail-modal::-webkit-scrollbar-thumb {
+        background: #a7c7b8;
+        border-radius: 10px;
+    }
+
+
+    /* ======================================
+       HEADER
+    ====================================== */
+
+    .report-detail-header {
+        position: sticky;
+        top: 0;
+        z-index: 5;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        gap: 20px;
+
+        padding: 22px 26px;
+
+        background: linear-gradient(
+            145deg,
+            #ffffff 0%,
+            #f8fbfa 100%
+        );
+
+        border-bottom: 1px solid #dce8e2;
+
+        box-shadow:
+            0 4px 14px rgba(15, 35, 27, 0.035);
+
+        box-sizing: border-box;
+    }
+
+    .report-detail-header > div {
+        display: flex;
+        flex-direction: column;
+
+        gap: 5px;
+
+        min-width: 0;
+    }
+
+    .report-detail-header h3 {
+        margin: 0;
+
+        font-size: 22px;
+        line-height: 1.35;
+        font-weight: 700;
+        letter-spacing: -0.45px;
+
+        color: #17221e;
+    }
+
+    .report-detail-header span {
+        font-size: 13px;
+        line-height: 1.5;
+
+        color: #68766f;
+
+        overflow-wrap: anywhere;
+    }
+
+    .report-detail-close {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        flex-shrink: 0;
+
+        width: 40px;
+        height: 40px;
+
+        padding: 0;
+
+        font-family: inherit;
+        font-size: 28px;
+        line-height: 1;
+
+        color: #68766f;
+
+        background: linear-gradient(
+            145deg,
+            #ffffff 0%,
+            #f1f7f4 100%
+        );
+
+        border: 1px solid #d6e2dd;
+        border-radius: 10px;
+
+        cursor: pointer;
+
+        box-shadow:
+            0 3px 8px rgba(15, 35, 27, 0.04);
+
+        transition:
+            background 0.2s ease,
+            color 0.2s ease,
+            border-color 0.2s ease,
+            box-shadow 0.2s ease,
+            transform 0.2s ease;
+    }
+
+    .report-detail-close:hover {
+        color: #dc2626;
+        background: #fff5f5;
+        border-color: #fecaca;
+
+        box-shadow:
+            0 4px 10px rgba(220, 38, 38, 0.08);
+    }
+
+    .report-detail-close:active {
+        transform: scale(0.95);
+    }
+
+    .report-detail-close:focus-visible {
+        outline: 2px solid #10b981;
+        outline-offset: 2px;
+    }
+
+
+    /* ======================================
+       TRANSACTION INFO
+    ====================================== */
+
+    .report-detail-info {
+        display: grid;
+
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+
+        gap: 16px;
+
+        padding: 22px 26px;
+
+        background: linear-gradient(
+            145deg,
+            #f4f9f6 0%,
+            #f8fbfa 100%
+        );
+
+        border-bottom: 1px solid #dce8e2;
+
+        box-sizing: border-box;
+    }
+
+    .report-detail-info > div {
+        position: relative;
+        overflow: hidden;
+
+        display: flex;
+        flex-direction: column;
+
+        gap: 7px;
+
+        min-width: 0;
+
+        padding: 16px;
+
+        background: linear-gradient(
+            145deg,
+            #ffffff 0%,
+            #f9fcfa 100%
+        );
+
+        border: 1px solid #dce8e2;
+        border-radius: 12px;
+
+        box-shadow:
+            0 5px 14px rgba(15, 35, 27, 0.035),
+            0 1px 3px rgba(15, 35, 27, 0.02);
+
+        transition:
+            border-color 0.2s ease,
+            box-shadow 0.2s ease,
+            transform 0.2s ease;
+
+        box-sizing: border-box;
+    }
+
+    .report-detail-info > div::before {
+        content: "";
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+
+        height: 3px;
+
+        background: linear-gradient(
+            90deg,
+            #059669,
+            #34d399
+        );
+    }
+
+    .report-detail-info > div:hover {
+        border-color: #b7d9c8;
+
+        box-shadow:
+            0 8px 20px rgba(5, 150, 105, 0.07),
+            0 2px 5px rgba(15, 35, 27, 0.025);
+
+        transform: translateY(-2px);
+    }
+
+    .report-detail-info span {
+        font-size: 12px;
+        font-weight: 600;
+
+        color: #68766f;
+    }
+
+    .report-detail-info strong {
+        font-size: 14px;
+        line-height: 1.5;
+        font-weight: 700;
+
+        color: #17221e;
+
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+
+    .report-detail-info strong.retur {
+        color: #dc6262;
+    }
+
+
+    /* ======================================
+       SECTION BARANG
+    ====================================== */
+
+    .report-detail-section {
+        display: flex;
+        flex-direction: column;
+
+        gap: 14px;
+
+        padding: 24px 26px;
+
+        box-sizing: border-box;
+    }
+
+    .report-detail-section h4,
+    .report-detail-payment h4 {
+        margin: 0;
+
+        font-size: 16px;
+        line-height: 1.4;
+        font-weight: 700;
+        letter-spacing: -0.2px;
+
+        color: #17221e;
+    }
+
+
+    /* ======================================
+       TABLE BARANG
+    ====================================== */
+
+    .report-detail-table {
+        width: 100%;
+        min-width: 0;
+
+        overflow-x: auto;
+
+        background: #ffffff;
+
+        border: 1px solid #dce8e2;
+        border-radius: 12px;
+
+        scrollbar-width: thin;
+        scrollbar-color: #a7c7b8 transparent;
+
+        box-shadow:
+            0 5px 16px rgba(15, 35, 27, 0.035);
+
+        box-sizing: border-box;
+    }
+
+    .report-detail-table::-webkit-scrollbar {
+        height: 6px;
+    }
+
+    .report-detail-table::-webkit-scrollbar-track {
+        background: #f1f7f4;
+    }
+
+    .report-detail-table::-webkit-scrollbar-thumb {
+        background: #a7c7b8;
+        border-radius: 10px;
+    }
+
+    .report-detail-table table {
+        width: 100%;
+        min-width: 700px;
+
+        border-collapse: separate;
+        border-spacing: 0;
+
+        background: #ffffff;
+
+        font-size: 13px;
+    }
+
+    .report-detail-table thead th {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+
+        padding: 14px 16px;
+
+        font-size: 12px;
+        line-height: 1.4;
+        font-weight: 700;
+
+        text-align: left;
+        white-space: nowrap;
+
+        color: #43564c;
+
+        background: linear-gradient(
+            145deg,
+            #f1f7f4 0%,
+            #eaf4ee 100%
+        );
+
+        border-bottom: 1px solid #d6e2dd;
+    }
+
+    .report-detail-table tbody td {
+        padding: 14px 16px;
+
+        font-size: 13px;
+        line-height: 1.5;
+
+        color: #34463d;
+
+        background: #ffffff;
+
+        border-bottom: 1px solid #edf3ef;
+
+        vertical-align: middle;
+
+        transition: background 0.15s ease;
+    }
+
+    .report-detail-table tbody tr:last-child td {
+        border-bottom: none;
+    }
+
+    .report-detail-table tbody tr:hover td {
+        background: #f0faf5;
+    }
+
+    .report-detail-table tbody td strong {
+        display: block;
+
+        font-size: 13px;
+        font-weight: 700;
+
+        color: #17221e;
+
+        overflow-wrap: anywhere;
+    }
+
+    .report-detail-table tbody td small {
+        display: block;
+
+        margin-top: 4px;
+
+        font-size: 11px;
+        line-height: 1.4;
+
+        color: #87968e;
+
+        overflow-wrap: anywhere;
+    }
+
+    .report-detail-table .empty-detail {
+        padding: 30px 16px;
+
+        text-align: center;
+
+        font-size: 13px;
+
+        color: #87968e;
+        background: #fbfdfc;
+    }
+
+
+    /* ======================================
+       PAYMENT & TOTAL
+    ====================================== */
+
+    .report-detail-payment {
+        display: grid;
+
+        grid-template-columns: minmax(0, 1.1fr) minmax(300px, 0.9fr);
+
+        align-items: start;
+
+        gap: 24px;
+
+        padding: 24px 26px;
+
+        background: linear-gradient(
+            145deg,
+            #f4f9f6 0%,
+            #f8fbfa 100%
+        );
+
+        border-top: 1px solid #dce8e2;
+
+        box-sizing: border-box;
+    }
+
+    .report-detail-payment > div {
+        min-width: 0;
+    }
+
+    .report-detail-payment > div:first-child {
+        display: flex;
+        flex-direction: column;
+
+        gap: 14px;
+    }
+
+    .payment-list {
+        display: flex;
+        flex-direction: column;
+
+        gap: 0;
+
+        padding: 4px 16px;
+
+        background: linear-gradient(
+            145deg,
+            #ffffff 0%,
+            #fbfdfc 100%
+        );
+
+        border: 1px solid #dce8e2;
+        border-radius: 12px;
+
+        box-shadow:
+            0 5px 14px rgba(15, 35, 27, 0.03);
+
+        box-sizing: border-box;
+    }
+
+    .payment-row {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+
+        gap: 16px;
+
+        padding: 13px 0;
+
+        border-bottom: 1px solid #edf3ef;
+
+        box-sizing: border-box;
+    }
+
+    .payment-row:last-child {
+        border-bottom: none;
+    }
+
+    .payment-row span {
+        min-width: 0;
+
+        font-size: 13px;
+        line-height: 1.5;
+
+        color: #68766f;
+
+        overflow-wrap: anywhere;
+    }
+
+    .payment-row strong {
+        flex-shrink: 0;
+
+        font-size: 13px;
+        line-height: 1.5;
+        font-weight: 700;
+
+        text-align: right;
+        white-space: nowrap;
+
+        color: #17221e;
+    }
+
+    .payment-row.payment-total {
+        margin-top: 6px;
+        padding: 14px 16px;
+
+        background: linear-gradient(
+            145deg,
+            #ecfdf5 0%,
+            #dff7eb 100%
+        );
+
+        border: 1px solid #b7e4d0;
+        border-radius: 10px;
+
+        box-shadow:
+            0 4px 10px rgba(5, 150, 105, 0.05);
+    }
+
+    .payment-row.payment-total span,
+    .payment-row.payment-total strong {
+        color: #047857;
+        font-weight: 700;
+    }
+
+    .payment-row.payment-change {
+        padding: 13px 16px;
+
+        background: linear-gradient(
+            145deg,
+            #f0fdf4 0%,
+            #e5f8eb 100%
+        );
+
+        border: 1px solid #bbdfc7;
+        border-radius: 10px;
+    }
+
+    .payment-row.payment-change span,
+    .payment-row.payment-change strong {
+        color: #15803d;
+        font-weight: 700;
+    }
+
+    .payment-empty {
+        padding: 20px 16px;
+
+        font-size: 13px;
+        line-height: 1.5;
+
+        color: #87968e;
+
+        background: #ffffff;
+
+        border: 1px dashed #bfd4c9;
+        border-radius: 10px;
+    }
+
+
+    /* ======================================
+       TOTAL TRANSAKSI
+    ====================================== */
+
+    .report-detail-total {
+        position: relative;
+        overflow: hidden;
+
+        display: flex;
+        flex-direction: column;
+
+        gap: 0;
+
+        padding: 18px 20px;
+
+        background: linear-gradient(
+            145deg,
+            #ffffff 0%,
+            #f8fbfa 100%
+        );
+
+        border: 1px solid #d6e2dd;
+        border-radius: 13px;
+
+        box-shadow:
+            0 8px 20px rgba(15, 35, 27, 0.045),
+            0 2px 5px rgba(15, 35, 27, 0.02);
+
+        box-sizing: border-box;
+    }
+
+    .report-detail-total::before {
+        content: "";
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+
+        height: 3px;
+
+        background: linear-gradient(
+            90deg,
+            #059669,
+            #34d399
+        );
+    }
+
+    .report-detail-total > div {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+
+        gap: 16px;
+
+        padding: 13px 0;
+
+        border-bottom: 1px solid #edf3ef;
+
+        box-sizing: border-box;
+    }
+
+    .report-detail-total > div:last-child {
+        border-bottom: none;
+    }
+
+    .report-detail-total span {
+        font-size: 13px;
+        line-height: 1.5;
+
+        color: #68766f;
+    }
+
+    .report-detail-total strong {
+        flex-shrink: 0;
+
+        font-size: 14px;
+        line-height: 1.5;
+        font-weight: 700;
+
+        text-align: right;
+        white-space: nowrap;
+
+        color: #17221e;
+    }
+
+    .report-detail-total .grand-total {
+        position: relative;
+
+        margin-top: 10px;
+        padding: 17px 16px;
+
+        background:
+            radial-gradient(
+                circle at 100% 0%,
+                rgba(52, 211, 153, 0.18),
+                transparent 52%
+            ),
+            linear-gradient(
+                145deg,
+                #ecfdf5 0%,
+                #dff7eb 100%
+            );
+
+        border: 1px solid #a7dfc3;
+        border-radius: 11px;
+
+        box-shadow:
+            0 5px 14px rgba(5, 150, 105, 0.07);
+    }
+
+    .report-detail-total .grand-total span {
+        font-size: 14px;
+        font-weight: 700;
+
+        color: #176b4d;
+    }
+
+    .report-detail-total .grand-total strong {
+        font-size: 20px;
+        font-weight: 700;
+        letter-spacing: -0.35px;
+
+        color: #047857;
+    }
+
+
+    /* ======================================
+       ACTION BUTTONS
+    ====================================== */
+
+    .report-detail-actions {
+        position: sticky;
+        bottom: 0;
+        z-index: 5;
+
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        gap: 12px;
+
+        padding: 18px 26px;
+
+        background: linear-gradient(
+            145deg,
+            #ffffff 0%,
+            #f8fbfa 100%
+        );
+
+        border-top: 1px solid #dce8e2;
+
+        box-shadow:
+            0 -5px 16px rgba(15, 35, 27, 0.045);
+
+        box-sizing: border-box;
+    }
+
+    .report-detail-actions button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        gap: 8px;
+
+        min-width: 150px;
+        min-height: 44px;
+
+        padding: 11px 20px;
+
+        font-family: inherit;
+        font-size: 13px;
+        line-height: 1.4;
+        font-weight: 700;
+
+        border: 1px solid transparent;
+        border-radius: 10px;
+
+        cursor: pointer;
+
+        box-shadow:
+            0 4px 10px rgba(15, 35, 27, 0.06),
+            inset 0 1px 0 rgba(255, 255, 255, 0.15);
+
+        transition:
+            background 0.2s ease,
+            border-color 0.2s ease,
+            box-shadow 0.2s ease,
+            transform 0.2s ease;
+
+        box-sizing: border-box;
+    }
+
+    .report-detail-print {
+        color: #ffffff;
+
+        background: linear-gradient(
+            135deg,
+            #10b981 0%,
+            #059669 100%
+        );
+
+        border-color: #059669 !important;
+
+        box-shadow:
+            0 5px 13px rgba(5, 150, 105, 0.18),
+            inset 0 1px 0 rgba(255, 255, 255, 0.16);
+    }
+
+    .report-detail-print:hover {
+        background: linear-gradient(
+            135deg,
+            #059669 0%,
+            #047857 100%
+        );
+
+        border-color: #047857 !important;
+
+        box-shadow:
+            0 7px 17px rgba(5, 150, 105, 0.23);
+
+        transform: translateY(-1px);
+    }
+
+    .report-detail-return {
+        color: #9f1239;
+
+        background: linear-gradient(
+            145deg,
+            #fffafa 0%,
+            #fff1f2 100%
+        );
+
+        border-color: #fecdd3 !important;
+
+        box-shadow:
+            0 4px 10px rgba(190, 24, 93, 0.05);
+    }
+
+    .report-detail-return:hover {
+        color: #881337;
+
+        background: linear-gradient(
+            145deg,
+            #fff1f2 0%,
+            #ffe4e6 100%
+        );
+
+        border-color: #fda4af !important;
+
+        box-shadow:
+            0 6px 14px rgba(190, 24, 93, 0.09);
+
+        transform: translateY(-1px);
+    }
+
+    .report-detail-actions button:active {
+        transform: scale(0.98);
+    }
+
+    .report-detail-actions button:focus-visible {
+        outline: 2px solid #10b981;
+        outline-offset: 3px;
+    }
+
+/* WATERMARK RETUR */
+.report-detail-modal {
+    position: relative;
+}
+
+.report-detail-watermark {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%) rotate(-30deg);
+
+    color: rgba(220, 38, 38, 0.22);
+    border: 5px solid rgba(220, 38, 38, 0.22);
+    border-radius: 12px;
+
+    padding: 8px 24px;
+
+    font-size: clamp(48px, 9vw, 100px);
+    font-weight: 900;
+    letter-spacing: 8px;
+    line-height: 1.2;
+    white-space: nowrap;
+
+    pointer-events: none;
+    user-select: none;
+
+    z-index: 4;
+}
+
+
+    /* ======================================
+       DESKTOP UKURAN SEDANG
+    ====================================== */
+
+    @media (min-width: 769px) and (max-width: 1100px) {
+
+        .report-detail-overlay {
+            padding: 16px;
+        }
+
+        .report-detail-modal {
+            max-height: calc(100vh - 32px);
+        }
+
+        .report-detail-header {
+            padding: 18px 20px;
+        }
+
+        .report-detail-info {
+            gap: 10px;
+            padding: 18px 20px;
+        }
+
+        .report-detail-info > div {
+            padding: 12px;
+        }
+
+        .report-detail-section {
+            padding: 20px;
+        }
+
+        .report-detail-payment {
+            grid-template-columns: minmax(0, 1fr) minmax(260px, 0.9fr);
+            gap: 16px;
+            padding: 20px;
+        }
+
+        .report-detail-actions {
+            padding: 16px 20px;
+        }
+    }
+
+}

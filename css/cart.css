@@ -1,0 +1,489 @@
+/* ======================================
+   TREEHOUSE POS
+   CART
+   CSS DESKTOP & MOBILE
+   PREMIUM EMERALD DESIGN
+====================================== */
+
+
+/* ======================================
+   EMPTY CART
+====================================== */
+
+.empty-cart {
+    width: 100%;
+    min-height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 16px;
+    text-align: center;
+    color: #68766f;
+}
+
+.empty-cart > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.empty-cart > div > div:first-child {
+    color: #17221e;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.empty-cart > div > div:last-child {
+    font-size: 12px;
+    line-height: 1.6;
+    color: #7a8981;
+}
+
+
+/* ======================================
+   CART ITEMS CONTAINER
+====================================== */
+
+#cartItems {
+    width: 100%;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+/* ======================================
+   CART ITEM
+====================================== */
+
+.cart-item {
+    position: relative;
+
+    width: 100%;
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    padding: 14px;
+
+    border: 1px solid #d6e8dd;
+    border-radius: 12px;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(52, 211, 153, 0.055),
+            transparent 55%
+        ),
+        linear-gradient(
+            145deg,
+            #ffffff 0%,
+            #f9fcfa 100%
+        );
+
+    box-shadow:
+        0 3px 10px rgba(16, 60, 40, 0.035),
+        0 1px 3px rgba(16, 60, 40, 0.02);
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.cart-item:hover {
+    border-color: #a8d9bf;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(52, 211, 153, 0.09),
+            transparent 60%
+        ),
+        linear-gradient(
+            145deg,
+            #ffffff 0%,
+            #f4fbf7 100%
+        );
+
+    box-shadow:
+        0 6px 16px rgba(16, 60, 40, 0.06),
+        0 2px 5px rgba(16, 185, 129, 0.035);
+}
+
+
+/* ======================================
+   CART ITEM TOP
+====================================== */
+
+.cart-item-top {
+    width: 100%;
+    min-width: 0;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.cart-item-top > div:first-child {
+    flex: 1;
+    min-width: 0;
+}
+
+.cart-item-name {
+    color: #17221e;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.5;
+
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+.cart-item-code {
+    margin-top: 4px;
+
+    color: #7a8981;
+    font-size: 11px;
+    line-height: 1.5;
+
+    overflow-wrap: anywhere;
+}
+
+.cart-item-discount {
+    margin-top: 6px;
+
+    color: #c24141;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 1.6;
+
+    overflow-wrap: anywhere;
+}
+
+.cart-item-price {
+    flex-shrink: 0;
+
+    color: #047857;
+    font-size: 13px;
+    font-weight: 800;
+    line-height: 1.5;
+    text-align: right;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* ======================================
+   CART ITEM BOTTOM
+====================================== */
+
+.cart-item-bottom {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+
+    padding-top: 10px;
+
+    border-top: 1px solid #e6f0ea;
+}
+
+
+/* ======================================
+   QUANTITY CONTROL
+====================================== */
+
+.qty-control {
+    display: inline-flex;
+    align-items: center;
+    gap: 0;
+
+    min-height: 34px;
+
+    border: 1px solid #cfe2d6;
+    border-radius: 9px;
+
+    background: #ffffff;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 2px 5px rgba(16, 60, 40, 0.025);
+}
+
+.qty-control button {
+    width: 34px;
+    height: 34px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: none;
+
+    background: linear-gradient(
+        145deg,
+        #f5faf7 0%,
+        #edf7f1 100%
+    );
+
+    color: #047857;
+
+    font-size: 20px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.15s ease,
+        color 0.15s ease;
+}
+
+.qty-control button:hover {
+    background: linear-gradient(
+        145deg,
+        #d9f7e8 0%,
+        #c5f0d9 100%
+    );
+
+    color: #065f46;
+}
+
+.qty-control button:active {
+    background: #a7e8c4;
+    color: #064e3b;
+}
+
+.qty-control span {
+    min-width: 36px;
+
+    padding: 0 6px;
+
+    color: #17221e;
+    font-size: 13px;
+    font-weight: 800;
+    text-align: center;
+    font-variant-numeric: tabular-nums;
+}
+
+
+/* ======================================
+   REMOVE ITEM
+====================================== */
+
+.remove-item {
+    min-height: 34px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0 12px;
+
+    border: 1px solid #f1caca;
+    border-radius: 9px;
+
+    background: linear-gradient(
+        145deg,
+        #ffffff 0%,
+        #fff5f5 100%
+    );
+
+    color: #b91c1c;
+
+    font-size: 11px;
+    font-weight: 700;
+    white-space: nowrap;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 2px 5px rgba(185, 28, 28, 0.025);
+
+    transition:
+        background 0.15s ease,
+        border-color 0.15s ease,
+        box-shadow 0.15s ease,
+        transform 0.15s ease;
+}
+
+.remove-item:hover {
+    border-color: #e9a6a6;
+
+    background: linear-gradient(
+        145deg,
+        #fff1f2 0%,
+        #ffe4e6 100%
+    );
+
+    box-shadow:
+        0 3px 8px rgba(185, 28, 28, 0.06);
+}
+
+.remove-item:active {
+    background: #fecaca;
+    transform: scale(0.97);
+}
+
+
+/* ======================================
+   BUTTON INTERACTION
+====================================== */
+
+.qty-control button:focus-visible,
+.remove-item:focus-visible {
+    outline: 2px solid #10b981;
+    outline-offset: 2px;
+}
+
+
+/* ======================================
+   MOBILE CART
+====================================== */
+
+@media (max-width: 768px) {
+
+    #cartItems {
+        gap: 8px;
+    }
+
+    .cart-item {
+        gap: 10px;
+        padding: 12px;
+        border-radius: 11px;
+    }
+
+    .cart-item-top {
+        gap: 8px;
+    }
+
+    .cart-item-name {
+        font-size: 13px;
+    }
+
+    .cart-item-code {
+        font-size: 11px;
+    }
+
+    .cart-item-discount {
+        font-size: 10px;
+    }
+
+    .cart-item-price {
+        max-width: 45%;
+        font-size: 12px;
+    }
+
+    .cart-item-bottom {
+        gap: 8px;
+        padding-top: 9px;
+    }
+
+    .qty-control {
+        min-height: 36px;
+    }
+
+    .qty-control button {
+        width: 36px;
+        height: 36px;
+        font-size: 20px;
+    }
+
+    .qty-control span {
+        min-width: 36px;
+        font-size: 13px;
+    }
+
+    .remove-item {
+        min-height: 36px;
+        padding: 0 12px;
+        font-size: 11px;
+    }
+
+    .empty-cart {
+        min-height: 150px;
+        padding: 20px 12px;
+    }
+}
+
+
+/* ======================================
+   SMALL MOBILE
+====================================== */
+
+@media (max-width: 380px) {
+
+    .cart-item {
+        padding: 10px;
+    }
+
+    .cart-item-top {
+        gap: 6px;
+    }
+
+    .cart-item-name {
+        font-size: 12px;
+    }
+
+    .cart-item-code {
+        font-size: 10px;
+    }
+
+    .cart-item-price {
+        font-size: 11px;
+    }
+
+    .cart-item-bottom {
+        gap: 6px;
+    }
+
+    .qty-control button {
+        width: 30px;
+        height: 34px;
+    }
+
+    .qty-control span {
+        min-width: 30px;
+        padding: 0 4px;
+        font-size: 12px;
+    }
+
+    .remove-item {
+        padding: 0 9px;
+        font-size: 10px;
+    }
+
+    .empty-cart > div > div:first-child {
+        font-size: 14px;
+    }
+
+    .empty-cart > div > div:last-child {
+        font-size: 11px;
+    }
+}
+
+
+/* ======================================
+   REDUCE MOTION
+====================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .cart-item,
+    .qty-control button,
+    .remove-item {
+        transition: none;
+    }
+}

@@ -1,0 +1,848 @@
+
+/* ======================================
+   TREEHOUSE POS
+   REPORT
+   CSS MOBILE
+   PREMIUM EMERALD
+====================================== */
+
+@media (max-width: 768px) {
+
+/* ======================================
+   MODAL OVERLAY
+====================================== */
+
+.report-modal-overlay-mobile {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    display: flex;
+    align-items: stretch;
+    justify-content: stretch;
+    width: 100%;
+    height: 100%;
+    height: 100dvh;
+    margin: 0;
+    padding: 0;
+    background: #f5f9f7;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.report-modal-mobile {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    width: 100%;
+    min-width: 0;
+    min-height: 0;
+    max-width: 100%;
+    max-height: none;
+    height: 100%;
+    height: 100dvh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: #f5f9f7;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    box-sizing: border-box;
+}
+
+/* ======================================
+   REPORT PAGE
+====================================== */
+
+.report-page-mobile {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    width: 100%;
+    min-width: 0;
+    min-height: 0;
+    height: auto;
+    gap: 16px;
+    margin: 0;
+    padding: 16px 12px;
+    padding-bottom: calc(16px + env(safe-area-inset-bottom));
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: #a7c7b8 #f1f7f4;
+    box-sizing: border-box;
+}
+
+.report-page-mobile::-webkit-scrollbar {
+    width: 5px;
+}
+
+.report-page-mobile::-webkit-scrollbar-track {
+    background: #f1f7f4;
+}
+
+.report-page-mobile::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background: #a7c7b8;
+}
+
+.report-page-mobile > * {
+    min-width: 0;
+    max-width: 100%;
+}
+
+/* ======================================
+   HEADER STICKY — FIX OVERLAPPING CONTENT
+====================================== */
+
+.report-header-mobile {
+    position: sticky;
+    top: -16px;
+    z-index: 9999;
+    isolation: isolate;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-shrink: 0;
+    gap: 12px;
+
+    width: 100%;
+    min-width: 0;
+    margin: -16px 0 0;
+    padding: 16px 0 14px;
+
+    background: #ffffff;
+    border-bottom: 1px solid #dce8e2;
+
+    box-shadow: 0 4px 12px rgba(15, 35, 27, 0.08);
+
+    box-sizing: border-box;
+}
+
+.report-header-mobile::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: #ffffff;
+    pointer-events: none;
+}
+
+.report-header-mobile .report-modal-close-mobile {
+    position: absolute;
+    top: 16px;
+    right: 0;
+    margin: 0;
+    z-index: 2;
+}
+
+/* Pastikan elemen setelah header berada di lapisan normal */
+.report-page-mobile > :not(.report-header-mobile) {
+    position: relative;
+    z-index: 0;
+}
+
+.report-header-content-mobile {
+    min-width: 0;
+    padding-right: 48px;
+    box-sizing: border-box;
+}
+
+.report-header-content-mobile h2 {
+    margin: 0;
+    font-size: 21px;
+    line-height: 1.3;
+    font-weight: 700;
+    letter-spacing: -0.45px;
+    color: #056542;
+    overflow-wrap: anywhere;
+}
+
+.report-header-content-mobile p {
+    margin: 5px 0 0;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #68766f;
+}
+
+.report-header-actions-mobile {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+
+    box-sizing: border-box;
+}
+
+.report-header-actions-mobile .report-button-mobile {
+    flex: 0 1 auto;
+    min-width: 90px;
+}
+/* ======================================
+   BUTTON MOBILE
+   PREMIUM EMERALD DESIGN
+====================================== */
+
+.report-button-mobile {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    min-width: 0;
+    max-width: 160px;
+    min-height: 40px;
+
+    margin: 0;
+    padding: 9px 14px;
+
+    border: 1px solid #d6e2dd;
+    border-radius: 10px;
+
+    background: linear-gradient(
+        145deg,
+        #ffffff 0%,
+        #f4f9f6 100%
+    );
+
+    color: #34463d;
+
+    font-family: inherit;
+    font-size: 12px;
+    line-height: 1.4;
+    font-weight: 600;
+
+    white-space: normal;
+    text-align: center;
+    overflow-wrap: anywhere;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 2px 5px rgba(15, 35, 27, 0.04),
+        0 1px 2px rgba(15, 35, 27, 0.025);
+
+    box-sizing: border-box;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+.report-button-mobile img {
+    display: block;
+
+    width: 20px;
+    height: 20px;
+
+    flex-shrink: 0;
+
+    object-fit: contain;
+}
+
+.report-button-mobile:hover {
+    background: linear-gradient(
+        145deg,
+        #f0faf5 0%,
+        #e7f5ed 100%
+    );
+
+    border-color: #a7cbb8;
+    color: #047857;
+
+    box-shadow:
+        0 4px 9px rgba(5, 150, 105, 0.08);
+}
+
+.report-button-mobile:active {
+    transform: translateY(1px);
+    box-shadow: none;
+}
+
+/* ======================================
+   PRIMARY BUTTON
+====================================== */
+
+.report-button-mobile.primary {
+    position: relative;
+    z-index: 2;
+
+    min-height: 40px;
+    margin-left: auto;
+    margin-right: 0;
+    padding: 9px 14px;
+
+    border: 1px solid #059669;
+
+    background: linear-gradient(
+        135deg,
+        #10b981 0%,
+        #059669 100%
+    );
+
+    color: #ffffff;
+
+    font-weight: 700;
+
+    box-shadow:
+        0 4px 10px rgba(5, 150, 105, 0.16),
+        inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+
+.report-button-mobile.primary:hover {
+    border-color: #047857;
+
+    background: linear-gradient(
+        135deg,
+        #059669 0%,
+        #047857 100%
+    );
+
+    color: #ffffff;
+
+    box-shadow:
+        0 6px 14px rgba(5, 150, 105, 0.22);
+
+    transform: translateY(-1px);
+}
+
+.report-button-mobile.primary:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+/* ======================================
+   FOCUS ACCESSIBILITY
+====================================== */
+
+.report-button-mobile:focus-visible,
+.report-modal-close-mobile:focus-visible {
+    outline: 2px solid #10b981;
+    outline-offset: 3px;
+}
+
+/* ======================================
+   DISABLED STATE
+====================================== */
+
+.report-button-mobile:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+    pointer-events: none;
+    box-shadow: none;
+}
+
+/* ======================================
+   CLOSE BUTTON
+====================================== */
+
+.report-modal-close-mobile {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 40px;
+    width: 40px;
+    min-width: 40px;
+    height: 40px;
+    margin: 0;
+    padding: 0;
+    font-size: 22px;
+    line-height: 1;
+    border: 1px solid #dce8e2;
+    border-radius: 10px;
+    background: linear-gradient(145deg, #ffffff 0%, #f8fbfa 100%);
+    color: #68766f;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.report-modal-close-mobile:hover,
+.report-modal-close-mobile:active {
+    background: #fff5f5;
+    border-color: #fecaca;
+    color: #dc2626;
+}
+
+/* ======================================
+   FILTER
+   TWO-COLUMN LAYOUT
+====================================== */
+
+.report-filter-mobile {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+    gap: 12px;
+
+    flex-shrink: 0;
+    width: 100%;
+    min-width: 0;
+
+    margin: 0;
+    padding: 14px 12px;
+
+    background: linear-gradient(
+        145deg,
+        #ffffff 0%,
+        #f8fbfa 100%
+    );
+
+    border: 1px solid #dce8e2;
+    border-radius: 14px;
+
+    box-shadow:
+        0 8px 20px rgba(15, 23, 42, 0.035),
+        0 2px 5px rgba(15, 23, 42, 0.02);
+
+    box-sizing: border-box;
+}
+
+.report-filter-group-mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.report-filter-group-mobile label {
+    font-size: 12px;
+    line-height: 1.4;
+    font-weight: 700;
+    color: #43564c;
+}
+
+.report-filter-group-mobile input,
+.report-filter-group-mobile select {
+    display: block;
+
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    height: 42px;
+
+    margin: 0;
+    padding: 0 10px;
+
+    font-family: inherit;
+    font-size: 14px;
+    color: #17221e;
+
+    background: #ffffff;
+    border: 1px solid #d6e2dd;
+    border-radius: 9px;
+
+    outline: none;
+    box-sizing: border-box;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.report-filter-group-mobile input:hover,
+.report-filter-group-mobile select:hover {
+    border-color: #a7cbb8;
+}
+
+.report-filter-group-mobile input:focus,
+.report-filter-group-mobile select:focus {
+    border-color: #10b981;
+    background: #fcfffd;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.12);
+}
+
+.report-filter-actions-mobile {
+    display: none;
+    align-items: stretch;
+    gap: 8px;
+
+    width: 100%;
+    min-width: 0;
+
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.report-filter-actions-mobile .report-button-mobile {
+    flex: 1 1 0;
+    width: auto;
+    min-width: 0;
+}
+
+/* LAYAR SANGAT KECIL */
+@media (max-width: 340px) {
+    .report-filter-mobile {
+        gap: 8px;
+        padding: 12px 8px;
+    }
+
+    .report-filter-group-mobile label {
+        font-size: 11px;
+    }
+
+    .report-filter-group-mobile input,
+    .report-filter-group-mobile select {
+        padding: 0 6px;
+        font-size: 12px;
+    }
+}
+
+/* ======================================
+   SUMMARY CARDS
+====================================== */
+
+.report-summary-mobile {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 10px;
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.report-card-mobile {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 8px;
+    width: 100%;
+    min-width: 0;
+    min-height: 40px;
+    margin: 0;
+    padding: 12px;
+    background: linear-gradient(145deg, #ffffff 0%, #f8fbfa 100%);
+    border: 1px solid #dce8e2;
+    border-radius: 13px;
+    box-shadow:
+        0 8px 20px rgba(15, 23, 42, 0.045),
+        0 2px 5px rgba(15, 23, 42, 0.025);
+    box-sizing: border-box;
+    overflow: hidden;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.report-card-mobile::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #10b981, #34d399);
+}
+
+.report-card-mobile::after {
+    content: "";
+    position: absolute;
+    top: -35px;
+    right: -35px;
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle,
+        rgba(16, 185, 129, 0.10) 0%,
+        rgba(16, 185, 129, 0.035) 48%,
+        transparent 72%
+    );
+    pointer-events: none;
+}
+
+.report-card-mobile > span {
+    position: relative;
+    z-index: 1;
+    display: block;
+    font-size: 11px;
+    line-height: 1.4;
+    font-weight: 650;
+    color: #68766f;
+    overflow-wrap: anywhere;
+}
+
+.report-card-mobile > strong {
+    position: relative;
+    z-index: 1;
+    display: block;
+    max-width: 100%;
+    margin: 0;
+    font-size: 17px;
+    line-height: 1.35;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    color: #17221e;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    font-variant-numeric: tabular-nums;
+}
+
+.report-card-mobile.total {
+    grid-column: 1 / -1;
+    min-height: 100px;
+    padding: 16px;
+    background:
+        radial-gradient(circle at 100% 0%, rgba(52, 211, 153, 0.17), transparent 48%),
+        linear-gradient(145deg, #ffffff 0%, #f0fbf5 100%);
+    border-color: #b7e4d0;
+    box-shadow:
+        0 12px 28px rgba(5, 150, 105, 0.08),
+        0 2px 5px rgba(15, 23, 42, 0.025);
+}
+
+.report-card-mobile.total::before {
+    height: 4px;
+    background: linear-gradient(90deg, #059669, #34d399);
+}
+
+.report-card-mobile.total > span {
+    color: #36735a;
+}
+
+.report-card-mobile.total > strong {
+    font-size: 24px;
+    color: #047857;
+}
+
+.report-card-mobile.payment {
+    min-height: 40px;
+}
+
+.report-card-mobile.payment::before {
+    background: linear-gradient(90deg, #6ee7b7, #a7f3d0);
+}
+
+.report-card-mobile.payment.total-payment {
+    grid-column: 1 / -1;
+    min-height: 92px;
+    background:
+        radial-gradient(circle at 100% 0%, rgba(16, 185, 129, 0.10), transparent 48%),
+        linear-gradient(145deg, #ffffff 0%, #f2faf6 100%);
+    border-color: #c8e5d8;
+}
+
+.report-card-mobile.payment.total-payment::before {
+    background: linear-gradient(90deg, #059669, #6ee7b7);
+}
+
+.report-card-mobile.payment.total-payment > span {
+    color: #36735a;
+}
+
+.report-card-mobile.payment.total-payment > strong {
+    font-size: 21px;
+    color: #047857;
+}
+
+/* ======================================
+   TABLE
+====================================== */
+
+.report-table-wrapper-mobile {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 auto;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    margin: 0;
+    background: #ffffff;
+    border: 1px solid #dce8e2;
+    border-radius: 13px;
+    overflow: hidden;
+    box-shadow:
+        0 8px 20px rgba(15, 23, 42, 0.04),
+        0 2px 5px rgba(15, 23, 42, 0.02);
+    box-sizing: border-box;
+}
+
+.report-table-header-mobile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-shrink: 0;
+    gap: 8px;
+    min-width: 0;
+    padding: 14px 12px;
+    border-bottom: 1px solid #dce8e2;
+    background: linear-gradient(145deg, #ffffff 0%, #f8fbfa 100%);
+    box-sizing: border-box;
+}
+
+.report-table-header-mobile h3 {
+    min-width: 0;
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.4;
+    font-weight: 700;
+    color: #17221e;
+    overflow-wrap: anywhere;
+}
+
+.report-table-scroll-mobile {
+    display: block;
+    flex: 0 0 auto;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    margin: 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: #a7c7b8 #f1f7f4;
+    box-sizing: border-box;
+}
+
+.report-table-scroll-mobile::-webkit-scrollbar {
+    height: 5px;
+}
+
+.report-table-scroll-mobile::-webkit-scrollbar-track {
+    background: #f1f7f4;
+}
+
+.report-table-scroll-mobile::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background: #a7c7b8;
+}
+
+.report-table-mobile {
+    width: 100%;
+    min-width: 850px;
+    margin: 0;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: 12px;
+    color: #34463d;
+    background: #ffffff;
+    font-variant-numeric: tabular-nums;
+}
+
+.report-table-mobile thead th {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    padding: 12px 10px;
+    font-size: 11px;
+    line-height: 1.4;
+    font-weight: 700;
+    text-align: left;
+    white-space: nowrap;
+    color: #43564c;
+    background: #f1f7f4;
+    border-bottom: 1px solid #d6e2dd;
+}
+
+.report-table-mobile tbody td {
+    padding: 11px 10px;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #34463d;
+    white-space: nowrap;
+    background: #ffffff;
+    border-bottom: 1px solid #edf3ef;
+}
+
+.report-table-mobile tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.report-table-mobile tbody tr:active td {
+    background: #f0faf5;
+}
+
+.report-table-mobile tbody td[colspan] {
+    padding: 28px 12px;
+    text-align: center;
+    white-space: normal;
+    color: #84938b;
+}
+
+/* ======================================
+   SMALL MOBILE
+====================================== */
+
+@media (max-width: 380px) {
+    .report-page-mobile {
+        gap: 12px;
+        padding: 12px 9px;
+        padding-bottom: calc(12px + env(safe-area-inset-bottom));
+    }
+
+    .report-header-content-mobile h2 {
+        font-size: 19px;
+    }
+
+    .report-header-actions-mobile {
+        gap: 8px;
+    }
+
+    .report-filter-mobile {
+        gap: 10px;
+        padding: 12px 10px;
+    }
+
+    .report-filter-actions-mobile {
+        gap: 6px;
+    }
+
+    .report-summary-mobile {
+        gap: 8px;
+    }
+
+    .report-card-mobile {
+        min-height: 82px;
+        padding: 10px;
+    }
+
+    .report-card-mobile > strong {
+        font-size: 15px;
+    }
+
+    .report-card-mobile.total > strong {
+        font-size: 21px;
+    }
+
+    .report-card-mobile.payment.total-payment > strong {
+        font-size: 18px;
+    }
+
+    .report-button-mobile {
+        padding: 8px 9px;
+        font-size: 11px;
+    }
+
+    .report-table-header-mobile {
+        padding: 12px 10px;
+    }
+}
+
+}

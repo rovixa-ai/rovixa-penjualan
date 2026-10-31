@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+     <!-- PWA -->
+<meta
+    name="theme-color"
+    content="#059669"
+>
+
+<link
+    rel="manifest"
+    href="./manifest.json"
+>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>ROVIXA POS</title>
+
+    <script>
+    document.documentElement.classList.add("app-auth-checking");
+</script>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- ======================================
+         APP
+    ======================================= -->
+
+    <div id="app"></div>
+
+
+
+   <!-- ======================================
+     SALES JS
+======================================= -->
+
+
+
+<script src="js/store-config.js"></script>
+
+<script src="../config/api-config.js"></script>
+
+<script src="js/api.js"></script>
+
+
+<!-- ======================================
+     LOCAL DATABASE
+======================================= -->
+
+<script src="js/db/local-db.js"></script>
+<script src="js/db/local-sync.js"></script>
+<script src="js/db/download.js"></script>
+<script src="js/db/download-users.js"></script>
+
+
+<!-- ======================================
+     AUTH
+======================================= -->
+
+<script src="js/auth.js"></script>
+<script src="js/login.js"></script>
+
+
+<!-- ======================================
+     DATABASE CONFIG
+======================================= -->
+
+<script src="js/database-config.js"></script>
+<script src="js/database-render.js"></script>
+
+
+<!-- ======================================
+     GLOBAL MODULE
+======================================= -->
+
+<script src="js/notification.js"></script>
+
+<script src="js/cart.js"></script>
+
+<script src="js/unit-modal.js"></script>
+
+<script src="js/payment-modal.js"></script>
+
+<script src="js/loading.js"></script>
+<script src="js/dialog.js"></script>
+
+
+<!-- ======================================
+     SALES
+======================================= -->
+
+<script src="js/receipt.js"></script>
+
+<script src="js/Sales/sales.js"></script>
+<script src="js/Sales/sales-desktop-render.js"></script>
+<script src="js/Sales/sales-mobile-render.js"></script>
+<script src="js/Sales/sales-render.js"></script>
+<script src="https://unpkg.com/@zxing/browser@latest"></script>
+<script src="js/Sales/barcode-scanner.js"></script>
+<script src="js/Sales/sales-products.js"></script>
+<script src="js/Sales/sales-events.js"></script>
+<script src="js/Sales/sales-search.js"></script>
+<script src="js/Sales/sales-cart.js"></script>
+<script src="js/Sales/sales-payment.js"></script>
+
+
+
+<!-- ======================================
+     REPORT
+======================================= -->
+
+<script src="js/report/report-desktop-render.js"></script>
+<script src="js/report/report-mobile-render.js"></script>
+<script src="js/report/report.js"></script>
+<script src="js/report/report-filter.js"></script>
+<script src="js/report/report-table.js"></script>
+<script src="js/report/report-detail.js"></script>
+<script src="js/report/report-helper.js"></script>
+
+<script src="js/retur.js"></script>
+
+
+
+
+<!-- ======================================
+     CUSTOMER SCREEN
+======================================= -->
+
+<script src="js/cust-screen/cust-screen.js"></script>
+
+
+
+<!-- ======================================
+     APP
+======================================= -->
+<script src="js/app-desktop-render.js"></script>
+<script src="js/app-mobile-render.js"></script>
+<script src="js/app.js"></script>
+
+<!-- ======================================
+     PWA
+======================================= -->
+
+<script src="./js/pwa.js"></script>
+
+</body>
+
+</html>

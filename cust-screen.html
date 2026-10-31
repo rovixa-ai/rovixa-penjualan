@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        ROVIXA POS - Customer Display
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="css/cust-screen.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/cust-screen-standby.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/cust-screen-transaction.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/cust-screen-finish.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/cust-screen-loading.css"
+    >
+
+</head>
+
+
+<body>
+
+    <div id="custScreen">
+
+        <header class="cust-header">
+
+            <div class="cust-brand">
+
+                <div
+                    class="cust-logo"
+                    id="custStoreLogo"
+                >
+                    T
+                </div>
+
+                <div class="cust-title">
+
+                    <strong id="custStoreName"></strong>
+
+                    <span>
+                        Customer Display
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="cust-status">
+                Menunggu transaksi...
+            </div>
+
+        </header>
+
+
+        <main
+            class="cust-main"
+            id="custMain"
+        ></main>
+
+
+        <footer class="cust-footer">
+            Silakan periksa kembali pesanan Anda
+        </footer>
+
+    </div>
+
+
+    <script src="js/cust-screen/cust-screen-standby.js"></script>
+
+    <script src="js/cust-screen/cust-screen-transaction.js"></script>
+
+     <script src="js/cust-screen/cust-screen-finish.js"></script>
+
+    <script src="js/cust-screen/cust-screen-loading.js"></script>
+
+    <script src="js/cust-screen/cust-screen-network.js"></script>
+
+    <script src="js/cust-screen/cust-screen-display.js"></script>
+
+
+    <script>
+
+        CustScreenDisplay.init();
+
+    </script>
+
+</body>
+
+</html>

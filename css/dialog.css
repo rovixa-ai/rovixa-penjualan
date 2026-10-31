@@ -1,0 +1,492 @@
+
+/* ======================================
+   TREEHOUSE POS
+   GLOBAL DIALOG & NOTIFICATION
+====================================== */
+
+.th-dialog-open {
+    overflow: hidden;
+}
+
+/* ======================================
+   OVERLAY
+====================================== */
+
+.th-dialog-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 20000000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background: rgba(15, 23, 42, 0.45);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+
+    opacity: 1;
+    visibility: visible;
+
+    animation: thDialogFadeIn 0.18s ease;
+}
+
+.th-dialog-overlay[hidden] {
+    display: none !important;
+}
+
+/* ======================================
+   DIALOG CARD
+====================================== */
+
+.th-dialog {
+    width: 100%;
+    max-width: 420px;
+
+    padding: 26px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 16px;
+
+    background: linear-gradient(
+        145deg,
+        #ffffff 0%,
+        #f8fbfa 100%
+    );
+
+    border: 1px solid #d6e2dd;
+    border-radius: 22px;
+
+    box-shadow:
+        0 24px 70px rgba(15, 23, 42, 0.20),
+        0 4px 14px rgba(15, 23, 42, 0.06);
+
+    text-align: center;
+
+    animation: thDialogScaleIn 0.22s ease;
+    outline: none;
+}
+
+.th-dialog-content {
+    width: 100%;
+    min-width: 0;
+}
+
+.th-dialog-icon {
+    width: 54px;
+    height: 54px;
+    flex: 0 0 54px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 18px;
+
+    background: #e6f8ef;
+    color: #059669;
+
+    font-size: 27px;
+    font-weight: 700;
+}
+
+.th-dialog-icon.is-confirm {
+    background: #e6f8ef;
+    color: #059669;
+}
+
+.th-dialog-icon.is-alert,
+.th-dialog-icon.is-info {
+    background: #eaf2ff;
+    color: #2563eb;
+}
+
+.th-dialog-icon.is-success {
+    background: #e6f8ef;
+    color: #059669;
+}
+
+.th-dialog-icon.is-warning {
+    background: #fff4d6;
+    color: #b77900;
+}
+
+.th-dialog-icon.is-danger {
+    background: #feecec;
+    color: #dc2626;
+}
+
+/* ======================================
+   TEXT
+====================================== */
+
+.th-dialog-title {
+    margin: 0 0 9px;
+
+    color: #17221e;
+
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.35;
+
+    overflow-wrap: anywhere;
+}
+
+.th-dialog-message {
+    margin: 0;
+
+    color: #68766f;
+
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.7;
+
+    white-space: pre-line;
+    overflow-wrap: anywhere;
+}
+
+/* ======================================
+   BUTTONS
+====================================== */
+
+.th-dialog-actions {
+    width: 100%;
+
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+
+    gap: 10px;
+
+    margin-top: 5px;
+}
+
+.th-dialog-button {
+    min-height: 46px;
+    min-width: 0;
+    flex: 1;
+
+    padding: 11px 16px;
+
+    border: 1px solid transparent;
+    border-radius: 12px;
+
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background 0.18s ease,
+        border-color 0.18s ease,
+        box-shadow 0.18s ease,
+        transform 0.18s ease;
+}
+
+.th-dialog-button:focus-visible {
+    outline: 3px solid rgba(16, 185, 129, 0.3);
+    outline-offset: 3px;
+}
+
+.th-dialog-button:active {
+    transform: scale(0.98);
+}
+
+.th-dialog-confirm {
+    background: #10b981;
+    color: #ffffff;
+
+    box-shadow:
+        0 4px 10px rgba(16, 185, 129, 0.16);
+}
+
+.th-dialog-confirm:hover {
+    background: #059669;
+}
+
+.th-dialog-confirm.is-danger {
+    background: #dc2626;
+    box-shadow:
+        0 4px 10px rgba(220, 38, 38, 0.15);
+}
+
+.th-dialog-confirm.is-danger:hover {
+    background: #b91c1c;
+}
+
+.th-dialog-confirm.is-success {
+    background: #059669;
+}
+
+.th-dialog-cancel {
+    background: #ffffff;
+    color: #47574f;
+
+    border-color: #d6e2dd;
+}
+
+.th-dialog-cancel:hover {
+    background: #f0f7f4;
+    border-color: #a9c8ba;
+}
+
+.th-dialog-cancel[hidden] {
+    display: none !important;
+}
+
+/* ======================================
+   TOAST CONTAINER
+====================================== */
+
+.th-toast-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+
+    z-index: 200010;
+
+    width: min(380px, calc(100vw - 32px));
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    pointer-events: none;
+}
+
+/* ======================================
+   TOAST
+====================================== */
+
+.th-toast {
+    width: 100%;
+    min-width: 0;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 14px 15px;
+
+    background: #ffffff;
+    border: 1px solid #d6e2dd;
+    border-left: 4px solid #10b981;
+    border-radius: 14px;
+
+    box-shadow:
+        0 12px 32px rgba(15, 23, 42, 0.12);
+
+    color: #17221e;
+
+    pointer-events: auto;
+
+    animation: thToastEnter 0.25s ease;
+    transition:
+        opacity 0.22s ease,
+        transform 0.22s ease;
+}
+
+.th-toast.is-success {
+    border-left-color: #10b981;
+}
+
+.th-toast.is-error {
+    border-left-color: #dc2626;
+}
+
+.th-toast.is-warning {
+    border-left-color: #f59e0b;
+}
+
+.th-toast.is-info {
+    border-left-color: #3b82f6;
+}
+
+.th-toast.is-hiding {
+    opacity: 0;
+    transform: translateX(20px);
+}
+
+.th-toast-icon {
+    width: 32px;
+    height: 32px;
+    flex: 0 0 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: #e6f8ef;
+    color: #059669;
+
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.th-toast.is-error .th-toast-icon {
+    background: #feecec;
+    color: #dc2626;
+}
+
+.th-toast.is-warning .th-toast-icon {
+    background: #fff4d6;
+    color: #b77900;
+}
+
+.th-toast.is-info .th-toast-icon {
+    background: #eaf2ff;
+    color: #2563eb;
+}
+
+.th-toast-message {
+    flex: 1;
+    min-width: 0;
+
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.6;
+
+    overflow-wrap: anywhere;
+    white-space: pre-line;
+}
+
+.th-toast-close {
+    width: 30px;
+    height: 30px;
+    flex: 0 0 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    border-radius: 8px;
+
+    background: transparent;
+    color: #68766f;
+
+    font-family: inherit;
+    font-size: 23px;
+    line-height: 1;
+
+    cursor: pointer;
+}
+
+.th-toast-close:hover {
+    background: #f0f5f2;
+    color: #17221e;
+}
+
+/* ======================================
+   ANIMATIONS
+====================================== */
+
+@keyframes thDialogFadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes thDialogScaleIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes thToastEnter {
+    from {
+        opacity: 0;
+        transform: translateX(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ======================================
+   MOBILE
+====================================== */
+
+@media (max-width: 480px) {
+
+    .th-dialog-overlay {
+        padding: 18px;
+    }
+
+    .th-dialog {
+        max-width: 100%;
+        padding: 23px 19px;
+        gap: 14px;
+
+        border-radius: 20px;
+    }
+
+    .th-dialog-icon {
+        width: 48px;
+        height: 48px;
+        flex-basis: 48px;
+
+        border-radius: 15px;
+        font-size: 24px;
+    }
+
+    .th-dialog-title {
+        font-size: 18px;
+    }
+
+    .th-dialog-message {
+        font-size: 13px;
+    }
+
+    .th-dialog-actions {
+        gap: 8px;
+    }
+
+    .th-dialog-button {
+        min-height: 45px;
+        padding: 10px 12px;
+        font-size: 12px;
+    }
+
+    .th-toast-container {
+        top: 12px;
+        right: 12px;
+        width: calc(100vw - 24px);
+    }
+
+}
+
+/* ======================================
+   REDUCED MOTION
+====================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .th-dialog-overlay,
+    .th-dialog,
+    .th-toast {
+        animation: none !important;
+        transition: none !important;
+    }
+
+}

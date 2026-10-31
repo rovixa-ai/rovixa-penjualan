@@ -1,0 +1,159 @@
+* {
+    box-sizing: border-box;
+}
+
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+
+body {
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: #f5f6f8;
+
+    color: #1f2937;
+
+    overflow: hidden;
+}
+
+
+#custScreen {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* ======================================
+   HEADER
+====================================== */
+
+.cust-header {
+    height: 80px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 40px;
+
+    background: #ffffff;
+
+    border-bottom:
+        1px solid #e5e7eb;
+}
+
+
+.cust-brand {
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+}
+
+
+.cust-logo {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    overflow: hidden;
+
+    background: transparent;
+    border: none;
+    box-shadow: none;
+
+    font-size: 19px;
+    font-weight: 700;
+}
+
+
+.cust-logo img {
+    max-width: 100%;
+    max-height: 100%;
+
+    width: auto;
+    height: auto;
+
+    object-fit: contain;
+
+    display: block;
+}
+
+.cust-title {
+    display: flex;
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+
+.cust-title strong {
+    font-size: 22px;
+}
+
+
+.cust-title span {
+    font-size: 13px;
+
+    color: #6b7280;
+}
+
+
+.cust-status {
+    font-size: 14px;
+
+    color: #6b7280;
+}
+
+
+/* ======================================
+   MAIN
+====================================== */
+
+.cust-main {
+    flex: 1;
+
+    min-height: 0;
+
+    overflow: hidden;
+}
+
+
+/* ======================================
+   FOOTER
+====================================== */
+
+.cust-footer {
+    min-height: 64px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0 40px;
+
+    background: #ffffff;
+
+    border-top:
+        1px solid #e5e7eb;
+
+    color: #6b7280;
+
+    font-size: 14px;
+}

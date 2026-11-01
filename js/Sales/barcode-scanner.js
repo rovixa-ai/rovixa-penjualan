@@ -1,5 +1,5 @@
 // ======================================
-// TREEHOUSE POS
+// Rovixa POS
 // SALES
 // BARCODE CAMERA SCANNER
 // ======================================

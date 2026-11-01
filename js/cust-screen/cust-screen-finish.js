@@ -1,7 +1,7 @@
 // ======================================
 // CUSTOMER SCREEN
 // FINISH
-// TREEHOUSE POS
+// Rovixa POS
 // ======================================
 
 const CustScreenFinish = {

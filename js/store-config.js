@@ -1,5 +1,5 @@
 // ======================================
-// TREEHOUSE POS
+// Rovixa POS
 // STORE CONFIG
 // ======================================
 
@@ -7,7 +7,7 @@ const StoreConfig = {
 
 
     STORAGE_KEY:
-        "TREEHOUSE_POS_STORE_CONFIG",
+        "ROVIXA_POS_STORE_CONFIG",
 
     config: {},
 

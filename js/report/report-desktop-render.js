@@ -1,6 +1,6 @@
-/*======================================
+/*=====================================
 REPORT DESKTOP RENDER
-TREEHOUSE POS
+ Rovixa POS
 ======================================*/
 
 const ReportDesktopRender = {

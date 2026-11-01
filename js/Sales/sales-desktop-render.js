@@ -1,5 +1,5 @@
 // ======================================
-// TREEHOUSE POS
+// ROVIXA POS
 // SALES
 // DESKTOP RENDER
 // ======================================
@@ -13,11 +13,11 @@ const SalesDesktopRender = {
 
         const storeName =
             StoreConfig.getStoreName() ||
-            "Treehouse POS";
+            "Rovixa POS";
 
         const logoHtml = logo
             ? `<img src="${logo}" alt="Logo Toko">`
-            : "T";
+            : "R";
 
         let kasirName = "ADMIN";
 

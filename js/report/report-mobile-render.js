@@ -1,6 +1,6 @@
 /*======================================
 REPORT MOBILE RENDER
-TREEHOUSE POS
+Rovixa POS
 ======================================*/
 
 const ReportMobileRender = {

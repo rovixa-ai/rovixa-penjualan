@@ -1,6 +1,6 @@
 // ======================================
 // PAYMENT MODAL
-// TREEHOUSE POS
+// Rovixa POS
 // ======================================
 
 const PaymentModal = {

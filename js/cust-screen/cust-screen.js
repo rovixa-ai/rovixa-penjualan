@@ -1,12 +1,12 @@
 // ======================================
 // CUSTOMER SCREEN
-// TREEHOUSE POS
+// Rovixa POS
 // ======================================
 
 const CustScreen = {
 
     channelName:
-        "TREEHOUSE_POS_CUSTOMER_SCREEN",
+        "ROVIXA_POS_CUSTOMER_SCREEN",
 
     websocketUrl:
         "ws://192.168.1.134:8080",
@@ -115,7 +115,7 @@ const CustScreen = {
         this.window =
             window.open(
                 "cust-screen.html",
-                "TreehouseCustomerScreen",
+                "RovixaCustomerScreen",
                 "width=1280,height=720"
             );
 

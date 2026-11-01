@@ -1,12 +1,12 @@
 /* ======================================
-TREEHOUSE POS
+Rovixa POS
 LOCAL DATABASE - INDEXEDDB
 ====================================== */
 
 const LocalDB = {
 
 
-DB_NAME: "TreehousePOS",
+DB_NAME: "RovixaPOS",
 
 DB_VERSION: 5,
 

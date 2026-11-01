@@ -4,7 +4,7 @@ const AppDesktopRender = {
 
         return (
             StoreConfig.getStoreName() ||
-            "Treehouse POS"
+            "ROVIXA POS"
         );
 
     },

@@ -1,5 +1,5 @@
 // ======================================
-// TREEHOUSE POS
+// Rovixa POS
 // AUTH MODULE
 // LOGIN / SESSION USER KASIR
 // ======================================
@@ -7,7 +7,7 @@
 const Auth = {
 
     SESSION_KEY:
-        "TREEHOUSE_POS_SESSION",
+        "ROVIXA_POS_SESSION",
 
 
     /* ==================================

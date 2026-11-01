@@ -1,5 +1,5 @@
 /* ======================================
-TREEHOUSE POS
+Rovixa POS
 DOWNLOAD USERS
 MASTER USER KASIR → LOCAL DATABASE
 ====================================== */

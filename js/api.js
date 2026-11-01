@@ -1,5 +1,5 @@
 // ======================================
-// TREEHOUSE POS
+// Rovixa POS
 // API
 // MULTI-CLIENT CONFIGURATION
 // ======================================

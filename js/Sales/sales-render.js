@@ -1,5 +1,5 @@
 // ======================================
-// TREEHOUSE POS
+// ROVIXA POS
 // SALES
 // RENDER SELECTOR
 // RESPONSIVE TANPA RELOAD

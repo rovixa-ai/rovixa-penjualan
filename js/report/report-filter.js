@@ -1343,7 +1343,7 @@ async laporan() {
         const printWindow =
             window.open(
                 "",
-                "TreehouseLaporanPDF",
+                "RovixaLaporanPDF",
                 "width=1200,height=800,resizable=yes,scrollbars=yes"
             );
 
@@ -1360,7 +1360,7 @@ async laporan() {
             <html>
             <head>
                 <title>
-                    Treehouse POS - Laporan Penjualan
+                    Rovixa POS - Laporan Penjualan
                 </title>
             </head>
 

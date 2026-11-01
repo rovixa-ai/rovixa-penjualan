@@ -1,5 +1,5 @@
 // ======================================
-// TREEHOUSE POS
+// Rovixa POS
 // DOWNLOAD DATABASE PENJUALAN
 // APP KASIR
 // ======================================

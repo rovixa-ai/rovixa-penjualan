@@ -1,5 +1,5 @@
 /* ======================================
-   TREEHOUSE POS
+   Rovixa POS
    LOCAL SYNC
    GOOGLE SHEETS → INDEXEDDB
 ====================================== */

@@ -1,6 +1,6 @@
 // ======================================
 // CUSTOMER SCREEN DISPLAY
-// TREEHOUSE POS
+// Rovixa POS
 // ======================================
 
 const CustScreenDisplay = {
@@ -10,7 +10,7 @@ const CustScreenDisplay = {
     ================================== */
 
     channelName:
-        "TREEHOUSE_POS_CUSTOMER_SCREEN",
+        "ROVIXA_POS_CUSTOMER_SCREEN",
 
     websocketUrl:
         "ws://192.168.1.134:8080",

@@ -1,5 +1,5 @@
 /* ======================================
-   TREEHOUSE POS
+   ROVIXA POS
    GOOGLE APPS SCRIPT API CONFIG
    MULTI-CLIENT CONFIGURATION
 ====================================== */

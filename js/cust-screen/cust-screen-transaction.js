@@ -1,7 +1,7 @@
 // ======================================
 // CUSTOMER SCREEN
 // TRANSACTION
-// TREEHOUSE POS
+// Rovixa POS
 // ======================================
 
 const CustScreenTransaction = {

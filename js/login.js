@@ -1,5 +1,5 @@
 // ======================================
-// TREEHOUSE POS
+// Rovixa POS
 // LOGIN KASIR
 // ======================================
 
@@ -89,7 +89,7 @@ const Login = {
 
     getStoreInfo() {
 
-        let storeName = "Treehouse POS";
+        let storeName = "Rovixa POS";
         let logo = "";
 
         if (

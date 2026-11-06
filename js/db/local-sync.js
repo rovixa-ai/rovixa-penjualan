@@ -259,9 +259,6 @@ const LocalSync = {
 
             /* ======================================
                MAP BARANG LOKAL
-
-               Digunakan untuk mempertahankan stok
-               dari transaksi yang belum tersinkron.
             ====================================== */
 
             const localBarangMap =
@@ -293,11 +290,6 @@ const LocalSync = {
 
             /* ======================================
                GABUNG DATA SERVER DENGAN STOK LOKAL
-
-               Master barang mengikuti server.
-
-               Stok untuk barang yang digunakan dalam
-               transaksi pending tetap mengikuti LocalDB.
             ====================================== */
 
             const barang =
@@ -347,11 +339,6 @@ const LocalSync = {
                             ...serverBarang
                         };
 
-                        /*
-                        Pertahankan nama properti stok
-                        sesuai struktur data yang tersedia.
-                        */
-
                         if (
                             Object.prototype.hasOwnProperty.call(
                                 serverBarang,
@@ -396,10 +383,6 @@ const LocalSync = {
 
             /* ======================================
                PERBARUI INDEXEDDB
-
-               Data master diperbarui.
-               Stok barang dengan transaksi pending
-               tidak ditimpa oleh stok server yang lama.
             ====================================== */
 
             await LocalDB.putAll(
@@ -1463,6 +1446,7 @@ const LocalSync = {
 
             let returnSynced = 0;
 
+
             /* ======================================
                SYNC TRANSAKSI PENJUALAN
             ====================================== */
@@ -1494,6 +1478,7 @@ const LocalSync = {
                 }
 
             }
+
 
             /* ======================================
                SYNC RETUR
@@ -1561,6 +1546,12 @@ const LocalSync = {
 
     /* ======================================
        STARTUP
+
+       Hanya menjalankan sinkronisasi transaksi
+       penjualan dan retur yang masih pending.
+
+       Pembaruan master barang dan satuan
+       ditangani oleh IncomingSync.
     ====================================== */
 
     async startup() {
@@ -1598,16 +1589,11 @@ const LocalSync = {
             const transactionResult =
                 await this.syncPendingTransactions();
 
-            const productResult =
-                await this.syncProducts();
-
             return {
 
                 success: true,
 
-                transactions: transactionResult,
-
-                products: productResult
+                transactions: transactionResult
 
             };
 

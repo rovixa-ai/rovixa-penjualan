@@ -1,3 +1,4 @@
+
 // ======================================
 // Rovixa POS
 // STORE CONFIG
@@ -5,15 +6,48 @@
 
 const StoreConfig = {
 
-
     STORAGE_KEY:
         "ROVIXA_POS_STORE_CONFIG",
 
     config: {},
 
+    /* ==================================
+       LOAD LOCAL
+       ================================== */
+
+    async loadLocal() {
+
+        try {
+
+            const cached =
+                localStorage.getItem(
+                    this.STORAGE_KEY
+                );
+
+            this.config =
+                cached
+                    ? JSON.parse(cached) || {}
+                    : {};
+
+            return this.config;
+
+        } catch (error) {
+
+            console.warn(
+                "STORE CONFIG LOCAL LOAD WARNING:",
+                error
+            );
+
+            this.config = {};
+
+            return this.config;
+
+        }
+
+    },
 
     /* ==================================
-       LOAD
+       LOAD FROM SERVER
        ================================== */
 
     async load() {
@@ -28,58 +62,37 @@ const StoreConfig = {
                 {};
 
             try {
+
                 localStorage.setItem(
                     this.STORAGE_KEY,
                     JSON.stringify(
                         this.config
                     )
                 );
+
             } catch (storageError) {
+
                 console.warn(
                     "STORE CONFIG CACHE SAVE WARNING:",
                     storageError
                 );
+
             }
 
             return this.config;
 
-        }
-
-        catch (error) {
+        } catch (error) {
 
             console.warn(
                 "STORE CONFIG LOAD FAILED, TRYING CACHE:",
                 error
             );
 
-            try {
-                const cached =
-                    localStorage.getItem(
-                        this.STORAGE_KEY
-                    );
-
-                if (cached) {
-                    this.config =
-                        JSON.parse(cached) || {};
-
-                    return this.config;
-                }
-            } catch (cacheError) {
-                console.warn(
-                    "STORE CONFIG CACHE READ WARNING:",
-                    cacheError
-                );
-            }
-
-            this.config =
-                {};
-
-            return this.config;
+            return this.loadLocal();
 
         }
 
     },
-
 
     /* ==================================
        GET
@@ -94,7 +107,6 @@ const StoreConfig = {
 
     },
 
-
     /* ==================================
        GET STORE NAME
        ================================== */
@@ -106,7 +118,6 @@ const StoreConfig = {
         );
 
     },
-
 
     /* ==================================
        GET CURRENCY
@@ -122,7 +133,6 @@ const StoreConfig = {
         );
 
     },
-
 
     /* ==================================
        GET TAX
@@ -141,7 +151,6 @@ const StoreConfig = {
 
     },
 
-
     getTaxPercent() {
 
         return (
@@ -154,7 +163,6 @@ const StoreConfig = {
         );
 
     },
-
 
     /* ==================================
        GET DISCOUNT
@@ -173,7 +181,6 @@ const StoreConfig = {
 
     },
 
-
     /* ==================================
        GET STORE INFORMATION
        ================================== */
@@ -186,7 +193,6 @@ const StoreConfig = {
 
     },
 
-
     getPhone() {
 
         return this.get(
@@ -194,7 +200,6 @@ const StoreConfig = {
         );
 
     },
-
 
     getEmail() {
 
@@ -204,7 +209,6 @@ const StoreConfig = {
 
     },
 
-
     getLogo() {
 
         return this.get(
@@ -212,7 +216,6 @@ const StoreConfig = {
         );
 
     },
-
 
     getDescription() {
 
@@ -222,7 +225,6 @@ const StoreConfig = {
 
     },
 
-
     getStatus() {
 
         return this.get(
@@ -230,7 +232,6 @@ const StoreConfig = {
         );
 
     },
-
 
     /* ==================================
        GET TRANSACTION CONFIG
@@ -244,7 +245,6 @@ const StoreConfig = {
 
     },
 
-
     getTransactionPrefix() {
 
         return this.get(
@@ -252,7 +252,6 @@ const StoreConfig = {
         );
 
     },
-
 
     /* ==================================
        GET RECEIPT CONFIG
@@ -266,7 +265,6 @@ const StoreConfig = {
 
     },
 
-
     getReceiptFooter() {
 
         return this.get(
@@ -274,7 +272,6 @@ const StoreConfig = {
         );
 
     },
-
 
     /* ==================================
        GET QRIS CONFIG
@@ -293,7 +290,6 @@ const StoreConfig = {
 
     },
 
-
     getQrisProvider() {
 
         return this.get(
@@ -301,7 +297,6 @@ const StoreConfig = {
         );
 
     },
-
 
     getQrisMerchantId() {
 
@@ -311,7 +306,6 @@ const StoreConfig = {
 
     },
 
-
     getQrisApiUrl() {
 
         return this.get(
@@ -319,7 +313,6 @@ const StoreConfig = {
         );
 
     },
-
 
     getQrisCallbackUrl() {
 
@@ -329,7 +322,6 @@ const StoreConfig = {
 
     },
 
-
     getQrisStoreId() {
 
         return this.get(
@@ -337,7 +329,6 @@ const StoreConfig = {
         );
 
     },
-
 
     /* ==================================
        TIMEZONE

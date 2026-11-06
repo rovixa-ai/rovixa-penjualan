@@ -1,3 +1,4 @@
+
 // ======================================
 // Rovixa POS
 // APP
@@ -58,25 +59,25 @@ const App = {
             await LocalDB.init();
 
             /* ==================================
-               LOAD STORE CONFIG
+               LOAD STORE CONFIG FROM LOCAL
             ================================== */
 
             if (
                 typeof StoreConfig === "undefined" ||
-                typeof StoreConfig.load !== "function"
+                typeof StoreConfig.loadLocal !== "function"
             ) {
 
                 throw new Error(
-                    "StoreConfig tidak tersedia."
+                    "StoreConfig.loadLocal tidak tersedia."
                 );
 
             }
 
             this.updateLoading(
-                "Memuat konfigurasi toko..."
+                "Memuat konfigurasi toko lokal..."
             );
 
-            await StoreConfig.load();
+            await StoreConfig.loadLocal();
 
             /* ==================================
                RENDER APPLICATION SHELL
@@ -89,93 +90,14 @@ const App = {
             this.render();
 
             /* ==================================
-               DOWNLOAD MASTER USER
-            ================================== */
-
-            if (
-                typeof DownloadUsers === "undefined" ||
-                typeof DownloadUsers.download !== "function"
-            ) {
-
-                throw new Error(
-                    "DownloadUsers tidak tersedia."
-                );
-
-            }
-
-            this.updateLoading(
-                "Mengunduh data pengguna..."
-            );
-
-            let userDownloadError = null;
-
-            if (navigator.onLine) {
-
-                try {
-
-                    const userResult =
-                        await DownloadUsers.download();
-
-                    if (
-                        !userResult ||
-                        userResult.success !== true
-                    ) {
-
-                        userDownloadError =
-                            new Error(
-                                userResult?.message ||
-                                "Download data pengguna gagal."
-                            );
-
-                    }
-
-                } catch (err) {
-
-                    userDownloadError = err;
-
-                }
-
-            } else {
-
-                userDownloadError =
-                    new Error(
-                        "Perangkat dalam kondisi offline."
-                    );
-
-            }
-
-            if (userDownloadError) {
-
-                console.warn(
-                    "Download data pengguna dilewati / offline:",
-                    userDownloadError.message || userDownloadError
-                );
-
-                const localUsers =
-                    await LocalDB.getAll("users");
-
-                if (
-                    !Array.isArray(localUsers) ||
-                    !localUsers.length
-                ) {
-
-                    throw new Error(
-                        "Koneksi internet diperlukan untuk mengunduh akun pengguna pada penggunaan pertama kali."
-                    );
-
-                }
-
-            }
-
-            /* ==================================
-               PERSIAPAN APLIKASI SEBELUM LOGIN
-               DOWNLOAD DATABASE DAN SINKRONISASI
+               PERSIAPAN APLIKASI
+               INCOMING SYNC + OUTGOING SYNC
             ================================== */
 
             await this.prepareApplication();
 
             /* ==================================
-               VALIDASI LOGIN SETELAH PERSIAPAN
+               VALIDASI LOGIN
             ================================== */
 
             this.updateLoading(
@@ -721,7 +643,7 @@ const App = {
 
     /* ==================================
        PERSIAPAN APLIKASI
-       SEBELUM VALIDASI LOGIN
+       INCOMING SYNC + OUTGOING SYNC
     ================================== */
 
     async prepareApplication() {
@@ -770,88 +692,37 @@ const App = {
         }
 
         /* ==================================
-           DOWNLOAD DATABASE PENJUALAN
+           INCOMING SYNC
+           SERVER -> LOCAL
         ================================== */
 
         if (
-            typeof Download === "undefined" ||
-            typeof Download.download !== "function"
+            typeof IncomingSync === "undefined" ||
+            typeof IncomingSync.startup !== "function"
         ) {
 
             throw new Error(
-                "Download database penjualan tidak tersedia."
+                "IncomingSync.startup tidak tersedia."
             );
 
         }
 
-        const isYearReady =
-            typeof LocalDB !== "undefined" &&
-            typeof LocalDB.isYearDownloaded === "function"
-                ? await LocalDB.isYearDownloaded(currentYear)
-                : false;
+        this.updateLoading(
+            "Memeriksa perubahan data dari server..."
+        );
 
-        let downloadError = null;
+        const incomingResult =
+            await IncomingSync.startup();
 
-        if (navigator.onLine) {
+        if (
+            incomingResult &&
+            incomingResult.success === false
+        ) {
 
-            try {
-
-                this.updateLoading(
-                    "Mengunduh database penjualan..."
-                );
-
-                const downloadResult =
-                    await Download.download(
-                        currentYear
-                    );
-
-                if (
-                    !downloadResult ||
-                    downloadResult.success !== true
-                ) {
-
-                    downloadError =
-                        new Error(
-                            downloadResult?.message ||
-                            "Download database penjualan gagal."
-                        );
-
-                }
-
-            } catch (err) {
-
-                downloadError = err;
-
-            }
-
-        } else {
-
-            downloadError =
-                new Error(
-                    "Perangkat dalam kondisi offline."
-                );
-
-        }
-
-        if (downloadError) {
-
-            if (isYearReady) {
-
-                console.warn(
-                    "Download database penjualan dilewati / offline, menggunakan database lokal tahun " +
-                    currentYear + ":",
-                    downloadError.message || downloadError
-                );
-
-            } else {
-
-                throw new Error(
-                    "Database penjualan tahun " +
-                    currentYear +
-                    " belum tersedia di perangkat. Diperlukan koneksi internet untuk mengunduh data awal tahun ini."
-                );
-
-            }
+            throw new Error(
+                incomingResult.message ||
+                "Incoming Sync gagal."
+            );
 
         }
 
@@ -895,7 +766,8 @@ const App = {
         }
 
         /* ==================================
-           LOCAL SYNC
+           OUTGOING SYNC
+           LOCAL -> SERVER
         ================================== */
 
         if (
@@ -906,21 +778,19 @@ const App = {
             try {
 
                 this.updateLoading(
-                    "Menyinkronkan data..."
+                    "Mengirim data lokal yang belum tersinkron..."
                 );
 
                 const syncResult =
                     await LocalSync.startup();
 
                 if (
-                    syncResult &&
-                    syncResult.success
+                    !syncResult ||
+                    syncResult.success !== true
                 ) {
 
-                } else {
-
                     console.warn(
-                        "BACKGROUND SYNC SELESAI DENGAN HASIL:",
+                        "OUTGOING SYNC SELESAI DENGAN HASIL:",
                         syncResult
                     );
 
@@ -929,7 +799,7 @@ const App = {
             } catch (error) {
 
                 console.error(
-                    "BACKGROUND SYNC ERROR:",
+                    "OUTGOING SYNC ERROR:",
                     error
                 );
 
@@ -993,20 +863,20 @@ const App = {
 
                 if (
                     typeof StoreConfig === "undefined" ||
-                    typeof StoreConfig.load !== "function"
+                    typeof StoreConfig.loadLocal !== "function"
                 ) {
 
                     throw new Error(
-                        "StoreConfig tidak tersedia."
+                        "StoreConfig.loadLocal tidak tersedia."
                     );
 
                 }
 
                 this.updateLoading(
-                    "Memuat konfigurasi toko..."
+                    "Memuat konfigurasi toko lokal..."
                 );
 
-                await StoreConfig.load();
+                await StoreConfig.loadLocal();
 
                 this.refreshHeader();
 

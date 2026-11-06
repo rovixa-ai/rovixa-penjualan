@@ -129,6 +129,12 @@ const API = {
 
             });
 
+            if (action === "bootstrap") {
+    console.trace(
+        "API GET BOOTSTRAP REQUEST:"
+    );
+}
+
         const response =
             await fetch(
                 `${baseUrl}?${query.toString()}`
@@ -254,6 +260,10 @@ const API = {
        ================================== */
 
     async bootstrap() {
+
+        console.trace(
+        "API.BOOTSTRAP DIPANGGIL DARI:"
+    );
 
         /* ==============================
            HASIL SUDAH TERSIMPAN

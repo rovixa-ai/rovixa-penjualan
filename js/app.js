@@ -769,65 +769,91 @@ const App = {
 
         }
 
-       /* ==================================
-   INCOMING SYNC
-   SERVER → INDEXEDDB
-================================== */
+        /* ==================================
+           DOWNLOAD DATABASE PENJUALAN
+        ================================== */
 
-const isYearReady =
-    await LocalDB.isYearDownloaded(currentYear);
+        if (
+            typeof Download === "undefined" ||
+            typeof Download.download !== "function"
+        ) {
 
-if (!navigator.onLine && !isYearReady) {
+            throw new Error(
+                "Download database penjualan tidak tersedia."
+            );
 
-    throw new Error(
-        "Database penjualan tahun " +
-        currentYear +
-        " belum tersedia di perangkat. Diperlukan koneksi internet untuk mengunduh data awal tahun ini."
-    );
+        }
 
-}
+        const isYearReady =
+            typeof LocalDB !== "undefined" &&
+            typeof LocalDB.isYearDownloaded === "function"
+                ? await LocalDB.isYearDownloaded(currentYear)
+                : false;
 
-if (
-    typeof IncomingSync === "undefined" ||
-    typeof IncomingSync.startup !== "function"
-) {
+        let downloadError = null;
 
-    throw new Error(
-        "IncomingSync tidak tersedia."
-    );
+        if (navigator.onLine) {
 
-}
+            try {
 
-this.updateLoading(
-    "Menyinkronkan perubahan dari server..."
-);
+                this.updateLoading(
+                    "Mengunduh database penjualan..."
+                );
 
-const incomingResult =
-    await IncomingSync.startup(currentYear);
+                const downloadResult =
+                    await Download.download(
+                        currentYear
+                    );
 
-if (
-    (!incomingResult ||
-    incomingResult.success !== true) &&
-    !isYearReady
-) {
+                if (
+                    !downloadResult ||
+                    downloadResult.success !== true
+                ) {
 
-    throw new Error(
-        "Download database awal gagal. Periksa koneksi internet dan coba kembali."
-    );
+                    downloadError =
+                        new Error(
+                            downloadResult?.message ||
+                            "Download database penjualan gagal."
+                        );
 
-}
+                }
 
-if (
-    !incomingResult ||
-    incomingResult.success !== true
-) {
+            } catch (err) {
 
-    console.warn(
-        "INCOMING SYNC GAGAL, menggunakan database lokal:",
-        incomingResult
-    );
+                downloadError = err;
 
-}
+            }
+
+        } else {
+
+            downloadError =
+                new Error(
+                    "Perangkat dalam kondisi offline."
+                );
+
+        }
+
+        if (downloadError) {
+
+            if (isYearReady) {
+
+                console.warn(
+                    "Download database penjualan dilewati / offline, menggunakan database lokal tahun " +
+                    currentYear + ":",
+                    downloadError.message || downloadError
+                );
+
+            } else {
+
+                throw new Error(
+                    "Database penjualan tahun " +
+                    currentYear +
+                    " belum tersedia di perangkat. Diperlukan koneksi internet untuk mengunduh data awal tahun ini."
+                );
+
+            }
+
+        }
 
         /* ==================================
            INITIALIZE MODALS
@@ -869,52 +895,55 @@ if (
         }
 
         /* ==================================
-   OUTGOING SYNC
-   INDEXEDDB → GOOGLE SHEETS
-================================== */
-
-if (
-    typeof LocalSync !== "undefined" &&
-    typeof LocalSync.syncPendingTransactions === "function"
-) {
-
-    try {
-
-        this.updateLoading(
-            "Mengirim transaksi yang belum tersinkron..."
-        );
-
-        const syncResult =
-            await LocalSync.syncPendingTransactions();
+           LOCAL SYNC
+        ================================== */
 
         if (
-            !syncResult ||
-            syncResult.success !== true
+            typeof LocalSync !== "undefined" &&
+            typeof LocalSync.startup === "function"
         ) {
 
+            try {
+
+                this.updateLoading(
+                    "Menyinkronkan data..."
+                );
+
+                const syncResult =
+                    await LocalSync.startup();
+
+                if (
+                    syncResult &&
+                    syncResult.success
+                ) {
+
+                } else {
+
+                    console.warn(
+                        "BACKGROUND SYNC SELESAI DENGAN HASIL:",
+                        syncResult
+                    );
+
+                }
+
+            } catch (error) {
+
+                console.error(
+                    "BACKGROUND SYNC ERROR:",
+                    error
+                );
+
+            }
+
+        } else {
+
             console.warn(
-                "OUTGOING SYNC SELESAI DENGAN HASIL:",
-                syncResult
+                "LocalSync.startup tidak tersedia."
             );
 
         }
 
-    } catch (error) {
-
-        console.error(
-            "OUTGOING SYNC ERROR:",
-            error
-        );
-
-    }
-
-} else {
-
-    console.warn(
-        "LocalSync.syncPendingTransactions tidak tersedia."
-    );
-
-}
+        this.applicationPrepared = true;
 
         return true;
 
